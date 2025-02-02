@@ -9,9 +9,9 @@ export default function SearchBar() {
         <div className="search-bar-container">
             <div className="tabs-container">
                 <div className="filters">
-                    <button className="filter active">All</button>
-                    <button className="filter">Active</button>
-                    <button className="filter">Archive</button>
+                    <button className="button">All</button>
+                    <button className="button">Active</button>
+                    <button className="button">Archive</button>
                 </div>
             </div>
 

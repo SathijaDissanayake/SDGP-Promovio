@@ -11,7 +11,7 @@ export default function Header() {
                 <a href="#">Settings</a>
                 <a href="#">Spend Tracker</a>
             </nav>
-            <input type="text" placeholder="Search..." className="search-input" />
+            <input type="text" placeholder="Search..." className="search-input"/>
         </header>
     );
 }

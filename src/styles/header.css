@@ -1,0 +1,55 @@
+/* Header Container */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e1e2e; /* Dark background */
+    color: #fff;
+    padding: 1rem 2rem;
+    border-bottom: 2px solid #6441a5; /* Purple border */
+    position: relative;
+}
+/* header.css */
+.header-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-search .input {
+    width: 250px;
+}
+
+.header-search .button {
+    padding: 8px 12px;
+}
+/* User Profile on the Top Left */
+.user-profile {
+    position: absolute;
+    top: 0.5rem;
+    left: 1rem;
+    font-size: 0.9rem;
+    color: #ccc; /* Slightly lighter color for subtle effect */
+    font-weight: normal;
+}
+
+/* Navigation Menu */
+.header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 1.1rem;
+}
+
+.header nav a:hover {
+    color:  #8f5de8; /* Purple hover effect */
+}
+
+/* Search Input */
+.search-input {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
