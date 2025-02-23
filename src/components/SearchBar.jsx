@@ -9,19 +9,16 @@ export default function SearchBar() {
         <div className="search-bar-container">
             <div className="tabs-container">
                 <div className="filters">
-                    <button className="button">All</button>
-                    <button className="button">Active</button>
-                    <button className="button">Archive</button>
+                    <button className="button button-all">All</button>
+                    <button className="button button-newLead">New Lead</button>
+                    <button className="button button-contacted">Contacted</button>
+                    <button className="button button-interested">Interested</button>
+                    <button className="button button-negotiation">Negotiation</button>
+                    <button className="button button-converted">Converted</button>
+                    <button className="button button-lost">Lost</button>
                 </div>
             </div>
-
-            <div className="search-bar">
-                <input type="text" placeholder="Type here"/>
-                <button className="purple-btn">Search</button>
-                <button className="purple-btn">Download</button>
-                <button className="purple-btn">Delete</button>
-            </div>
-
         </div>
+
     );
 }

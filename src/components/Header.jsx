@@ -3,7 +3,7 @@ import '../styles/header.css';
 export default function Header() {
     return (
         <header className="header">
-            <div className="user-info">Alicia Koch</div>
+            {/*<div className="user-info">Alicia Koch</div>*/}
             <nav>
                 <a href="#">Post Schedule</a>
                 <a href="#">CRM</a>
@@ -11,7 +11,6 @@ export default function Header() {
                 <a href="#">Settings</a>
                 <a href="#">Spend Tracker</a>
             </nav>
-            <input type="text" placeholder="Search..." className="search-input"/>
         </header>
     );
 }

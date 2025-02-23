@@ -2,111 +2,70 @@ import StatusBadge from './StatusBadge';
 
 const data = [
     {
-        task: 'Product Requirements',
-        type: 'PDF',
-        author: 'Earl Grayson',
-        version: 1,
-        status: 'Active',
-        uploaded: '29 Jul 2023'
+        contact: 'Earl Grayson',
+        email: 'earl.grayson@example.com',
+        leadStatus: 'New Lead',
+        lastContact: '29 Jul 2023'
     },
     {
-        task: 'New Product Launch Plan',
-        type: 'PDF',
-        author: 'Jake Vargas',
-        version: 2,
-        status: 'Active',
-        uploaded: '1 Jul 2023'
+        contact: 'Jake Vargas',
+        email: 'jake.vargas@example.com',
+        leadStatus: 'Contacted',
+        lastContact: '1 Jul 2023'
     },
     {
-        task: 'Sales Meeting Agenda',
-        type: 'DOC',
-        author: 'Chloe Raines',
-        version: 0,
-        status: 'Active',
-        uploaded: '6 Jun 2023'
+        contact: 'Chloe Raines',
+        email: 'chloe.raines@example.com',
+        leadStatus: 'Interested',
+        lastContact: '6 Jun 2023'
     },
     {
-        task: 'Feedback Analysis',
-        type: 'DOC',
-        author: 'Josh Reynaldo',
-        version: 3,
-        status: 'Active',
-        uploaded: '5 May 2023'
+        contact: 'Josh Reynaldo',
+        email: 'josh.reynaldo@example.com',
+        leadStatus: 'Negotiation',
+        lastContact: '5 May 2023'
     },
     {
-        task: 'Inventory Management',
-        type: 'XLSX',
-        author: 'Jacob Swanson',
-        version: 1,
-        status: 'Archive',
-        uploaded: '1 May 2023'
+        contact: 'Jacob Swanson',
+        email: 'jacob.swanson@example.com',
+        leadStatus: 'Converted',
+        lastContact: '1 May 2023'
     },
     {
-        task: 'Sales Forecasting',
-        type: 'XLSX',
-        author: 'Chloe Raines',
-        version: 1,
-        status: 'Archive',
-        uploaded: '20 Apr 2023'
-    },
-    {
-        task: 'Vendor Negotiation',
-        type: 'DOC',
-        author: 'Chloe Raines',
-        version: 2,
-        status: 'Active',
-        uploaded: '7 Apr 2023'
-    },
-    {
-        task: 'Merchandising Guidelines',
-        type: 'DOC',
-        author: 'Jake Vargas',
-        version: 4,
-        status: 'Archive',
-        uploaded: '24 Mar 2023'
-    },
+        contact: 'Chloe Raines',
+        email: 'chloe.raines@example.com',
+        leadStatus: 'Lost',
+        lastContact: '20 Apr 2023'
+    }
 ];
 
 export default function Table() {
     return (
-        <table className="task-table">
+        <table className="lead-table">
             <thead>
             <tr>
-                <th>
-                    <input type="checkbox" />
-                </th>
-                <th>Task</th>
-                <th>Type</th>
-                <th>Author</th>
-                <th>Version</th>
-                <th>Status</th>
+
+                <th>Contact</th>
+                <th>Email</th>
+                <th>Lead Status</th>
+                <th>Last Contact</th>
                 <th>Actions</th>
             </tr>
             </thead>
             <tbody>
             {data.map((item, index) => (
                 <tr key={index}>
-                    {/* Checkbox */}
+
+                    <td>{item.contact}</td>
+                    <td>{item.email}</td>
                     <td>
-                        <input type="checkbox" />
+                        <StatusBadge status={item.leadStatus} />
                     </td>
-                    {/* Task Name and Uploaded Date */}
-                    <td>
-                        <div className="task-name">{item.task}</div>
-                        <div className="uploaded-date">Uploaded {item.uploaded}</div>
-                    </td>
-                    {/* Other Columns */}
-                    <td>{item.type}</td>
-                    <td>{item.author}</td>
-                    <td>{item.version}</td>
-                    <td>
-                        <StatusBadge status={item.status} />
-                    </td>
-                    {/* Actions */}
+                    <td>{item.lastContact}</td>
                     <td>
                         <button className="action-btn">View</button>
                         <button className="action-btn">Edit</button>
-                        <button className="action-btn">Create</button>
+                        <button className="action-btn">Delete</button>
                     </td>
                 </tr>
             ))}

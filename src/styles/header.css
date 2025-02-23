@@ -7,7 +7,9 @@
     color: #fff;
     padding: 1rem 2rem;
     border-bottom: 2px solid #6441a5; /* Purple border */
-    position: relative;
+    /*position: relative;*/
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 /* header.css */
 .header-search {
@@ -34,22 +36,43 @@
 }
 
 /* Navigation Menu */
-.header nav a {
+/*.header nav a {*/
+/*    color: #fff;*/
+/*    text-decoration: none;*/
+/*    margin: 0 1rem;*/
+/*    font-size: 1.1rem;*/
+/*}*/
+
+/*.header nav a:hover {*/
+/*    color:  #8f5de8; !* Purple hover effect *!*/
+/*}*/
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
     color: #fff;
     text-decoration: none;
-    margin: 0 1rem;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
 }
 
-.header nav a:hover {
-    color:  #8f5de8; /* Purple hover effect */
+nav a:hover {
+    color: #8f5de8;
 }
-
 /* Search Input */
 .search-input {
-    padding: 5px 10px;
-    border-radius: 5px;
-    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #444;
+    /*outline: none;*/
+    /*font-size: 1rem;*/
+    background-color: #1e1e2f;
+    color: #fff;
+    transition: border-color 0.2s ease;
+}
+.search-input:focus {
     outline: none;
-    font-size: 1rem;
+    border-color: #8f5de8;
 }
