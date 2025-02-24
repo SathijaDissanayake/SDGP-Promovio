@@ -1,0 +1,80 @@
+/* Container Styling */
+.title {
+    text-align: center;
+    padding: 50px 20px;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+/* First Line: White Text */
+.first-line {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* Second Line: Gradient Text */
+.second-line {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: linear-gradient(to right, white 0%, rgb(117, 41, 169) 100%);
+    font-weight: bold;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 2.5rem;
+    animation: fadeInText 1.5s ease-in-out;
+}
+
+/* Button Styling */
+.Start-for-free {
+    padding: 8px 16px;  /* Moderate padding for a smaller, but not too narrow button */
+    border-radius: 8px; /* Slightly rounded corners */
+    font-weight: 600;
+    font-size: 0.9rem;  /* Slightly smaller font size */
+    color: white;
+    background: linear-gradient(to right, #1c102f, #5b269b);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    display: inline-block;  /* Ensures it's inline and not a block-level element */
+    text-align: center;
+    width: auto;  /* Make sure it doesn't stretch across the entire width */
+    white-space: nowrap;  /* Prevent text from wrapping */
+}
+
+/* Button Hover Effect */
+.Start-for-free:hover {
+    background: linear-gradient(to right, #5b269b, #1c102f);
+    transform: scale(1.05);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Button Click (Tap) Effect */
+.Start-for-free:active {
+    transform: scale(0.95);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        letter-spacing: -2px;
+    }
+    to {
+        opacity: 1;
+        letter-spacing: 1px;
+    }
+}

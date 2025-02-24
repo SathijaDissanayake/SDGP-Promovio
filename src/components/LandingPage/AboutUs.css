@@ -1,0 +1,187 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #111112;
+    color: #f9f2f2;
+    line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+    background: #190234e5;
+    padding: 50px 150px;
+    box-shadow: 0px 6px 20px rgba(75, 5, 128, 0.834); /* Enhanced shadow */
+    margin: 20px;
+    border-radius: 20px; /* More rounded */
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+}
+
+.hero:hover {
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+.hero-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #695294;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 15px;
+}
+
+.hero-description {
+    font-size: 20px;
+    color: #b196c6e6;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Sections */
+.section-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #f8f6f8;
+    margin: 40px 0 20px;
+    text-align: center;
+}
+
+/* Mission and Vision Section */
+.mission, .vision {
+    background: #46286d;
+    padding: 40px;
+    border-radius: 20px; /* More rounded corners */
+    margin: 20px auto;
+    max-width: 900px;
+    box-shadow: 0px 6px 20px rgba(42, 2, 73, 0.868); /* Enhanced shadow */
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+}
+
+.mission:hover, .vision:hover {
+    box-shadow: 0px 8px 25px rgba(33, 3, 52, 0.929); /* Shadow on hover */
+}
+
+.mission-content, .vision-content {
+    font-size: 18px;
+    color: #fcfcfa;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    padding: 40px;
+    max-width: 1300px;
+    margin: auto;
+}
+
+.feature-card {
+    background: #260248;
+    padding: 40px;
+    border-radius: 20px; /* More rounded corners */
+    text-align: center;
+    box-shadow: 0px 6px 20px rgba(89, 13, 196, 0.86); /* Enhanced shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px); /* Slightly more pronounced hover effect */
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+.feature-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.feature-icon {
+    font-size: 40px;
+    color: #007bff;
+}
+
+.feature-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.feature-description {
+    font-size: 16px;
+    color: #aeaaaa;
+    margin-top: 10px;
+}
+
+/* Team Grid */
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px;
+    max-width: 1500px;
+    margin: auto;
+}
+
+.team-member {
+    background: #340e49;
+    padding: 25px;
+    border-radius: 20px; /* More rounded corners */
+    text-align: center;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 220px;
+}
+
+.team-member:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+.member-avatar {
+    width: 220px;
+    height: 220px;
+    background-size: cover; /* Ensures the image fills the container */
+    background-position: center; /* Keeps the image centered within the container */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    border-radius: 50%; /* Rounds the container to make it circular */
+    margin: auto;
+    border: 5px solid #311047; /* White border for contrast */
+}
+
+.member-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #fff;
+}
+
+.member-role {
+    font-size: 16px;
+    color: #b8b8b8;
+}
+
+/* Footer */
+.footer {
+    background: #260543;
+    color: white;
+    padding: 30px 0;
+    margin-top: 60px;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for footer */
+    text-align: center;
+}
+
+.footer p {
+    margin: 10px;
+    font-size: 16px;
+    color: #ddd;
+}

@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    padding: 15px;
+    background-color: #151516; /* Dark background */
+    color: white; /* Makes text readable on dark background */
+    font-family: 'Poppins', Arial, sans-serif; /* Unified font family */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem; /* Adjust spacing for better balance */
+    width: 100%; /* Ensure full width */
+    max-width: 1200px; /* Optional: set max width for large screens */
+    margin: 0 auto; /* Center align the content */
+}
+
+/* Logo Section */
+.logo-container {
+    padding: 0;
+    margin: 0; /* Remove unnecessary margin */
+}
+
+.logo-img {
+    height: 70px; /* Adjust logo size */
+    width: auto;
+}
+
+/* Navbar Section */
+.navbar {
+    display: flex;
+    gap: 3rem; /* Adjust spacing for better balance */
+    align-items: center; /* Vertically center the links */
+}
+
+/* Navbar Links */
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    white-space: nowrap; /* Prevent text from breaking into multiple lines */
+}
+
+.nav-link:hover {
+    color: #974fd6;
+}
+
+/* Sign-up button adjustments */
+.signup-button {
+    margin-left: 2rem; /* Reduce space between navbar and button */
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+    background: linear-gradient(to bottom, #190d2e, #4a208a);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    max-width: 180px; /* Set maximum width */
+    width: auto; /* Ensure button width adjusts based on content */
+}
+
+.signup-button:hover {
+    background: linear-gradient(to bottom, #1c102f, #5b269b);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+    color: #f1f1f1; /* Subtle color change on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem; /* Adjust for mobile devices */
+    }
+
+    .navbar {
+        display: none; /* Hide navbar on small screens */
+    }
+
+    .signup-button {
+        margin-top: 1rem;
+    }
+    
+    .hamburger-menu {
+        display: block; /* Show hamburger menu */
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: white;
+    }
+}
+
+@media (max-width: 568px) {
+    .logo-img {
+        height: 60px; /* Slightly smaller logo on very small screens */
+    }
+}
