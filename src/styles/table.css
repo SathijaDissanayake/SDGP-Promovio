@@ -1,126 +1,92 @@
-/* Table Container */
-.table-container {
-    padding: 24px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
+/* Center the table on the page */
+/*.table-container {*/
+/*    padding: 30px;*/
+/*    background: #1e1e2e;*/
+/*    border-radius: 12px;*/
+/*    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);*/
+/*    margin: 50px auto;*/
+/*    width: 90%;*/
+/*    max-width: 1200px;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
 
-/* Add Button */
-.add-btn {
-    margin-bottom: 16px;
-    padding: 8px 16px;
-    background-color: #3b82f6; /* Blue */
-    color: white;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-.add-btn:hover {
-    background-color: #2563eb; /* Darker blue */
-}
-
-/* Table */
-.customers-table {
+/* Table Styling */
+.lead-table {
     width: 100%;
     border-collapse: collapse;
-    background: white;
-    border-radius: 8px;
+    background: #2a2a3a;
+    border-radius: 12px;
     overflow: hidden;
+    margin: 10px 0;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Table Header */
-.customers-table thead {
-    background-color: #f3f4f6; /* Light gray */
+.lead-table thead {
+    background-color: #3b3b52;
 }
 
-.customers-table th {
-    padding: 12px;
+.lead-table th {
+    padding: 16px;
     text-align: center;
     font-weight: bold;
-    border-bottom: 2px solid #ddd;
-    color: #374151; /* Dark gray */
+    border-bottom: 2px solid #444;
+    color: #e0e0e0;
+    width: 20%; /* Ensuring equal spacing */
 }
 
 /* Table Body */
-.customers-table td {
-    padding: 12px;
+.lead-table td {
+    padding: 14px;
     text-align: center;
-    border-bottom: 1px solid #ddd;
-    color: #4b5563; /* Gray */
+    border-bottom: 1px solid #444;
+    color: #b0b0b0;
 }
 
 /* Alternate Row Colors */
-.customers-table tbody tr:nth-child(odd) {
-    background-color: #f9fafb; /* Light gray */
+.lead-table tbody tr:nth-child(odd) {
+    background-color: #252536;
 }
 
-.customers-table tbody tr:hover {
-    background-color: #e5e7eb; /* Hover effect */
-}
-
-/* Lead Status Labels */
-.lead-status {
-    display: inline-block;
-    padding: 6px 12px;
-    border-radius: 12px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: white;
-}
-
-/* Lead Status Colors */
-.lead-status.new-lead {
-    background-color: #facc15; /* Yellow */
-}
-
-.lead-status.contacted {
-    background-color: #3b82f6; /* Blue */
-}
-
-.lead-status.interested {
-    background-color: #22c55e; /* Green */
-}
-
-.lead-status.negotiation {
-    background-color: #f97316; /* Orange */
-}
-
-.lead-status.converted {
-    background-color: #9333ea; /* Purple */
-}
-
-.lead-status.lost {
-    background-color: #ef4444; /* Red */
+.lead-table tbody tr:hover {
+    background-color: #33334d;
+    transition: background 0.3s ease-in-out;
 }
 
 /* Action Buttons */
 .action-btn {
-    padding: 6px 12px;
+    padding: 8px 14px;
     border-radius: 6px;
-    color: white;
     font-size: 0.9rem;
     cursor: pointer;
     transition: background 0.3s ease;
+    border: none;
+    outline: none;
+    color: white;
 }
 
 .view-btn {
-    background-color: #6b7280; /* Gray */
+    background-color: #6b7280;
 }
+
 .view-btn:hover {
     background-color: #4b5563;
 }
 
 .edit-btn {
-    background-color: #facc15; /* Yellow */
+    background-color: #facc15;
 }
+
 .edit-btn:hover {
     background-color: #eab308;
 }
 
 .delete-btn {
-    background-color: #ef4444; /* Red */
+    background-color: #ef4444;
 }
+
 .delete-btn:hover {
     background-color: #dc2626;
 }

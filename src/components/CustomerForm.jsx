@@ -2,12 +2,12 @@ import { useState } from "react";
 
 const CustomerForm = ({ customer, onSubmit, onCancel }) => {
     const [formData, setFormData] = useState(() => ({
-        fullName: customer?.fullName || "",
-        companyName: customer?.companyName || "",
+        fullName: customer?.contact || "",
         email: customer?.email || "",
         phone: customer?.phone || "",
         leadStatus: customer?.leadStatus || "New Lead",
         lastContact: customer?.lastContact || "",
+        companyName: customer?.companyName || "",
         jobTitle: customer?.jobTitle || "",
         industry: customer?.industry || "",
     }));
@@ -22,27 +22,32 @@ const CustomerForm = ({ customer, onSubmit, onCancel }) => {
     };
 
     return (
-        <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
-            <div className="bg-white p-6 rounded-lg shadow-lg w-96">
-                <h2 className="text-lg font-bold mb-4">{customer ? "Edit Contact" : "Add New Contact"}</h2>
-                <form onSubmit={handleSubmit} className="space-y-2">
-                    <input className="w-full p-2 border rounded" type="text" name="fullName" placeholder="Full Name" value={formData.fullName} onChange={handleChange} required />
-                    <input className="w-full p-2 border rounded" type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
-                    <input className="w-full p-2 border rounded" type="text" name="phone" placeholder="Phone" value={formData.phone} onChange={handleChange} />
+        <div className="modal-overlay">
+            <div className="modal-content">
+                <h2>{customer ? "Edit Contact" : "Add New Contact"}</h2>
+                <form onSubmit={handleSubmit} className="modal-form">
+                    <input type="text" name="fullName" placeholder="Full Name" value={formData.fullName} onChange={handleChange} required />
+                    <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
+                    <input type="text" name="phone" placeholder="Phone" value={formData.phone} onChange={handleChange} />
+                    <input type="text" name="companyName" placeholder="Company Name" value={formData.companyName} onChange={handleChange} />
+                    <input type="text" name="jobTitle" placeholder="Job Title" value={formData.jobTitle} onChange={handleChange} />
+                    <input type="text" name="industry" placeholder="Industry" value={formData.industry} onChange={handleChange} />
+                    <input type="date" name="lastContact" value={formData.lastContact} onChange={handleChange} />
 
-                    {/* Fix: Replacing undefined leadStatusColors */}
-                    <select className="w-full p-2 border rounded" name="leadStatus" value={formData.leadStatus} onChange={handleChange}>
-                        {["New Lead", "Contacted", "Qualified", "Proposal Sent", "Closed"].map((status) => (
-                            <option key={status} value={status}>{status}</option>
-                        ))}
+                    {/* Dropdown for Lead Status */}
+                    <select name="leadStatus" value={formData.leadStatus} onChange={handleChange}>
+                        <option value="New Lead">New Lead</option>
+                        <option value="Contacted">Contacted</option>
+                        <option value="Interested">Interested</option>
+                        <option value="Negotiation">Negotiation</option>
+                        <option value="Converted">Converted</option>
+                        <option value="Lost">Lost</option>
                     </select>
 
-                    <button className="px-4 py-2 bg-blue-500 text-white rounded">Save</button>
-
-                    {/* Fix: Prevents page reload on cancel */}
-                    <button type="button" className="px-4 py-2 bg-gray-500 text-white rounded ml-2" onClick={(e) => { e.preventDefault(); onCancel(); }}>
-                        Cancel
-                    </button>
+                    <div className="modal-buttons">
+                        <button type="submit" className="save-btn">Save</button>
+                        <button type="button" className="cancel-btn" onClick={onCancel}>Cancel</button>
+                    </div>
                 </form>
             </div>
         </div>

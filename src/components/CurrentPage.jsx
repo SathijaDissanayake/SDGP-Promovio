@@ -1,6 +1,7 @@
-import '../styles/currentpage.css';
+import "../styles/currentpage.css";
+import SearchBar from "./SearchBar"; // Import SearchBar
 
-export default function CurrentPage() {
+export default function CurrentPage({ setActiveTab, activeTab }) {
     return (
         <div className="currentPageContainer">
             <div className="currentPageHeader">
@@ -9,10 +10,30 @@ export default function CurrentPage() {
                         <h2>CRM</h2>
                     </div>
                     <div className="tabs">
-                        <button className="tab">Contacts</button>
-                        <button className="tab">Email</button>
-                        <button className="tab">Task</button>
-                        <button className="tab">Reminder</button>
+                        <button
+                            className={`tab ${activeTab === "Contacts" ? "active" : ""}`}
+                            onClick={() => setActiveTab("Contacts")}
+                        >
+                            Contacts
+                        </button>
+                        <button
+                            className={`tab ${activeTab === "Email" ? "active" : ""}`}
+                            onClick={() => setActiveTab("Email")}
+                        >
+                            Email
+                        </button>
+                        <button
+                            className={`tab ${activeTab === "Task" ? "active" : ""}`}
+                            onClick={() => setActiveTab("Task")}
+                        >
+                            Task
+                        </button>
+                        <button
+                            className={`tab ${activeTab === "Reminder" ? "active" : ""}`}
+                            onClick={() => setActiveTab("Reminder")}
+                        >
+                            Reminder
+                        </button>
                     </div>
                 </div>
 
@@ -21,7 +42,9 @@ export default function CurrentPage() {
                     <button className="search-customers">Search Customers</button>
                 </div>
             </div>
+
+            {/* Conditionally render SearchBar only when activeTab is "Contacts" */}
+            {activeTab === "Contacts" && <SearchBar />}
         </div>
     );
 }
-
