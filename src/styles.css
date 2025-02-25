@@ -1,0 +1,27 @@
+/* h1, h2, h3, h4, h5, h6 {
+    color: white;
+  }
+  
+  button {
+    background-color: #6d28d9;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #4c1d95;
+  }
+  
+
+  input, select {
+    background-color: #1e1e1e;
+    color: white;
+    border: 1px solid #6d28d9;
+    padding: 10px;
+  }
+  
+  input::placeholder {
+    color: #888;
+  } */
