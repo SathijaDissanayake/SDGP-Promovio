@@ -1,0 +1,41 @@
+.image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;    /* Horizontally center the content */
+    align-items: center;  
+    padding: 10px;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Soft outer shadow */
+}
+
+.image {
+    padding: 5px;
+    display: block;
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    z-index: 2;
+    position: relative;
+    transition: transform 0.3s ease-in-out; /* Smooth scaling transition */
+}
+
+
+
+.image-container::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    background: #400f7be5; /* Shadow color */
+    z-index: 0;
+    filter: blur(60px); /* Soft blurred shadow */
+    border-radius: 20px;
+}
+
+.image:hover {
+    transform: scale(1.1); /* Larger scale on hover */
+}
