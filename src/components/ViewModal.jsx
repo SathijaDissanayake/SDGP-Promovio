@@ -13,7 +13,7 @@ const ViewModal = ({ customer, onClose }) => {
                     <p><strong>Job Title:</strong> {customer.jobTitle || "N/A"}</p>
                     <p><strong>Industry:</strong> {customer.industry || "N/A"}</p>
                 </div>
-                <button className="close-btn" onClick={onClose}>Close</button>
+                <button className="cancel-btn" onClick={onClose}>Close</button>
             </div>
         </div>
     );

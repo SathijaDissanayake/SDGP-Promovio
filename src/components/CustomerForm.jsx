@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../styles/CustomerForm.css";
 
 const CustomerForm = ({ customer, onSubmit, onCancel }) => {
     const [formData, setFormData] = useState(() => ({
