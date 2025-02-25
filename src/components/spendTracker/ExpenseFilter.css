@@ -1,0 +1,37 @@
+.expense-filter {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.expense-filter select {
+    width: 100%;
+    max-width: 250px;
+    padding: 10px 12px;
+    font-size: 16px;
+    border: 2px solid #5a2ea6; /* Purple border */
+    border-radius: 5px;
+    background-color: #1a1a1a; /* Dark background */
+    color: white; /* White text */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.expense-filter select:hover {
+    border-color: #7d4cd6; /* Lighter purple on hover */
+}
+
+.expense-filter select:focus {
+    outline: none;
+    border-color: #7d4cd6;
+    box-shadow: 0 0 8px rgba(125, 76, 214, 0.6);
+}
+
+.expense-filter select option {
+    background-color: #292929; /* Dark dropdown background */
+    color: white;
+}
+
+.expense-filter select option:hover {
+    background-color: #5a2ea6; /* Purple highlight on hover */
+}
