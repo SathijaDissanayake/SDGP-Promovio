@@ -89,7 +89,7 @@ function App() {
 
   // Donut chart data 
   const doughnutData = {
-    labels: ["Red", "Blue", "Yellow", "Green"],
+    labels: ["Instagram", "Facebook", "Tiktok", "LinkedIn"],
     datasets: [
       {
         label: "Dataset",
