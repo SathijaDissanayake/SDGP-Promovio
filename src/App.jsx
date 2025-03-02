@@ -2,14 +2,13 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/LandingPage/Header";
 import LandingPage from "./components/LandingPage/LandingPage";
-import PricingPage from "./components/Pricing/PricingPage";
-import CheckoutPage from "./components/Pricing/CheckoutPage";
-
+import PricingPage from "./components/PricingPage/PricingPage";
+import CheckoutPage from "./components/PricingPage/CheckoutPage";
 
 function App() {
   return (
     <Router>
-      <Header/>
+      <Header />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/Pricing" element={<PricingPage />} />

@@ -1,0 +1,151 @@
+.pricing-page {
+  font-family: "Arial", sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center vertically */
+  min-height: 100vh; /* Take full viewport height */
+} 
+  
+  /* Large glowing circle in the background */
+  .background-circle {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    height: 1000px;
+    background: radial-gradient(circle, rgba(63, 21, 106, 0.916), rgba(50, 26, 128, 0.1));
+    border-radius: 50%;
+    filter: blur(150px);
+    z-index: -1;
+  }
+  
+  /* Pricing container */
+  .pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  
+  /* Individual pricing tiers */
+  .pricing-tier {
+    background-color: #260943;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(245, 243, 247, 0.1);
+    padding: 30px;
+    width: 300px;
+    position: relative;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  /* Highlighted pricing tier */
+  .pricing-tier.highlighted {
+    border: 2px solid #41217c;
+    transform: scale(1.05);
+  }
+  
+  /* Hover effect */
+  .pricing-tier:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Circular gradient background effect */
+  .pricing-tier::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(134, 72, 220, 0.86), rgba(78, 41, 199, 0.784));
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(50px);
+  }
+  
+  /* Tier name */
+  .tier-name {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 15px;
+  }
+  
+  /* Pricing text */
+  .tier-price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #8a55d5;
+    margin-bottom: 20px;
+  }
+  
+  .tier-period {
+    font-size: 1rem;
+    color: white;
+  }
+  
+  /* Feature list */
+  .tier-features {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+  
+  .tier-features li {
+    margin-bottom: 10px;
+    color: white;
+    position: relative;
+    padding-left: 25px;
+  }
+  
+  /* Checkmark icon */
+  .tier-features li::before {
+    content: "✓";
+    color: #e9ecf0;
+    position: absolute;
+    left: 0;
+  }
+  
+  /* Call-to-action button */
+  .tier-cta {
+    background-color: #321a80;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .tier-cta:hover {
+    background-color: #300a45;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .pricing-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .background-circle {
+      width: 500px;
+      height: 500px;
+      filter: blur(80px);
+    }
+  }
+  
+  
