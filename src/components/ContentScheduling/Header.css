@@ -1,0 +1,89 @@
+.header {
+    background-color: var(--background);
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  
+  .user-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+  }
+  
+  .status-indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #4cd137;
+    border-radius: 50%;
+  }
+  
+  .main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 16px;
+  }
+  
+  .nav-link {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    padding: 8px 0;
+  }
+  
+  .nav-link:hover {
+    color: var(--primary);
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .search-box {
+    display: flex;
+    align-items: center;
+    background-color: var(--card-bg);
+    border-radius: 4px;
+    padding: 6px 12px;
+    width: 240px;
+  }
+  
+  .search-box input {
+    background: transparent;
+    border: none;
+    color: var(--text);
+    margin-left: 8px;
+    width: 100%;
+    outline: none;
+  }
+  
+  .user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--card-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  

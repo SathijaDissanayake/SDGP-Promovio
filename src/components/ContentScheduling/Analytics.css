@@ -1,0 +1,48 @@
+.analytics-container {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 16px;
+  }
+  
+  .accounts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  
+  .account-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .account-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .account-icon.instagram {
+    color: #e1306c;
+  }
+  
+  .account-icon.facebook {
+    color: #1877f2;
+  }
+  
+  .account-icon.twitter {
+    color: #1da1f2;
+  }
+  
+  .account-icon.linkedin {
+    color: #0a66c2;
+  }
+  
+  .account-username {
+    font-size: 14px;
+  }
+  
+  

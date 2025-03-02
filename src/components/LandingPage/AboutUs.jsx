@@ -62,7 +62,7 @@ const AboutUs = () => {
             <TeamMember name="Mohamed Adheeb AbdulRahuman" role="Backend Developer" avatar={adheeb}/>
             <TeamMember name="Naslam Nuhman Ahamed Omar" role="Frontend Developer" avatar={omar} />
             <TeamMember name="Methmi Apoorwa Liyanage" role="UI/UX Designer" avatar={apoorwa}/>
-            <TeamMember name="Dona Dulani Linara" role="Data Analyst" avatar={dulani} />
+            <TeamMember name="Dulani Linara Kamkanamge" role="Data Analyst" avatar={dulani} />
             <TeamMember name="Lihini Menaya Karunanayake" role="Marketing Specialist" avatar={menaya}/>
           </div>
         </section>

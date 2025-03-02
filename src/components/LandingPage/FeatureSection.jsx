@@ -36,7 +36,7 @@ export default function FeatureSection() {
                     { title: "Integrated CRM", text: "Manage customer relationships, track interactions, and improve communication with an integrated CRM system", link: "/integrated-crm" },
                     { title: "Customizable Reports", text: "Generate detailed, customizable marketing reports that give you insights into your campaign performance and ROI", link: "/custom-reports" },
                     { title: "Social Media Insights", text: "Access detailed engagement metrics, such as likes, shares, reach, and audience demographics.", link: "/social-media-insights" },
-                    { title: "Content Scheduling & Calendar", text: "Plan and schedule posts in advance with an integrated content calendar", link: "/content-scheduling" }
+                    { title: "Content Scheduling & Calendar", text: "Plan and schedule posts in advance with an integrated content calendar", link: "/contentScheduling" }
                 ].map((feature, index) => (
                     <motion.div 
                         key={index} 
@@ -50,7 +50,7 @@ export default function FeatureSection() {
                     >
                         <h3>{feature.title}</h3>
                         <p>{feature.text}</p>
-                        <Link to={feature.link} className="view-more-btn">View More</Link> {/* View More Button */}
+                        <Link to={feature.link} className="view-more-btn">View More</Link> 
                     </motion.div>
                 ))}
             </div>

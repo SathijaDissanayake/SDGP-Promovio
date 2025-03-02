@@ -4,13 +4,12 @@ import BodyPart2 from "./BodyPart2";
 import FeatureSection from "./FeatureSection";
 import AboutUs from "./AboutUs";
 
-
 export default function LandingPage() {
     return (
         <div>
             <BodyPart1 />
             <BodyPart2 />
-            <FeatureSection />
+            <FeatureSection id="features" />
             <AboutUs />
             
         </div>

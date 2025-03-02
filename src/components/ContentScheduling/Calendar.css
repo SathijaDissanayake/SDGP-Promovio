@@ -1,0 +1,144 @@
+.calendar-container {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 16px;
+  }
+  
+  .section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .calendar-nav-btn {
+    background: transparent;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+  }
+  
+  .calendar-nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .current-month {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    margin-bottom: 20px;
+  }
+  
+  .calendar-day-header {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-secondary);
+    padding: 4px 0;
+  }
+  
+  .calendar-day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    font-size: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .calendar-day:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .calendar-day.prev-month,
+  .calendar-day.next-month {
+    color: var(--text-secondary);
+    opacity: 0.5;
+  }
+  
+  .calendar-day.today {
+    background-color: var(--calendar-today);
+    color: white;
+  }
+  
+  .calendar-day.selected {
+    background-color: var(--calendar-highlight);
+    color: white;
+  }
+  
+  .events-section {
+    margin-top: 16px;
+  }
+  
+  .events-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+  }
+  
+  .events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .event-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .event-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+  }
+  
+  .event-day {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .event-weekday {
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+  
+  .event-details {
+    flex: 1;
+  }
+  
+  .event-title {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .event-company {
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+  
+  .event-time {
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+  
+  
