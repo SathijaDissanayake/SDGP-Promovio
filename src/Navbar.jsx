@@ -32,7 +32,7 @@ const Navbar = () => {
       <section className="hero-section">
         <Container>
           <h1 className="display-2 fw-bold mb-4">Your Success, Powered by <br /> Digital Innovation</h1>
-          <p className="lead mb-5">Elevate your brand with cutting-edge digital marketing solutions</p>
+          <p className="lead mb-5">Performance Insights | Budget Optimization | Customer Management <br></br>Automated Planning | Seamless Sharing | Smart Assistance</p>
           <Button variant="primary" size="lg" className="cta-button">Get Started Today</Button>
         </Container>
       </section>

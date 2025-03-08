@@ -1,31 +1,30 @@
 /* Navigation Bar */
 .navbar {
     position: absolute;
-  top: 5%; /* Adjust this value as needed */
-  left: 50%;
-  transform: translateX(-50%); /* Centers the navbar horizontally */
-  display: flex;
-  align-items: center; /* Ensures all items inside the navbar are vertically centered */
-  justify-content: space-between;
-  background-color: rgb(243, 239, 239);
-  width: 45%;
-  height: 60px;
-  border-radius: 30px;
-  padding: 10px 20px;
-  z-index: 1000;
+    top: 4%; /* Adjust this value as needed */
+    left: 50%;
+    transform: translateX(-50%); /* Centers the navbar horizontally */
+    display: flex;
+    align-items: center; /* Ensures all items inside the navbar are vertically centered */
+    justify-content: space-between;
+    background-color: rgb(243, 239, 239);
+    width: 45%;
+    height: 50px;
+    border-radius: 30px;
+    padding: 10px 20px;
+    z-index: 1000;
     }
-    .logo {
-        display: flex;
-        align-items: center; /* Centers the logo vertically */
-        height: 100%; /* Ensures it takes full navbar height */
-      }
+.logo {
+    display: flex;
+    align-items: center; /* Centers the logo vertically */
+    height: 100%; /* Ensures it takes full navbar height */
+    }
       
     
-    .logo img {
-        width: 70px;
-        height: 90px; /* Keeps aspect ratio */
-        max-height: 100%; /* Ensures the logo does not exceed navbar height */
-        display: block;
+.logo img {
+    width: 80px;
+    height: 60px; /* Keeps aspect ratio */
+    display: block;
     }
     
     /* Navigation links */
@@ -43,7 +42,7 @@
     }
     
     .nav-links li a:hover {
-      color: #5f357a;
+      color: #caa2e0;
     }
     
     /* Mobile Menu Toggle */
@@ -72,6 +71,10 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+    .hero-section p {
+        font-size: 22px;
+        font-weight: bolder;
+    }
     
     .cta-button {
       background: linear-gradient(to right, #8c52ff, #ff914d);
@@ -92,7 +95,12 @@
       .menu-toggle {
         display: block;
       }
-    
+      .logo img {
+        width: 60px;
+        height: 90px; /* Keeps aspect ratio */
+        display: block;
+        padding-bottom: 35px;
+      }
       .nav-links {
         display: none;
         flex-direction: column;
@@ -114,6 +122,9 @@
       }
     
       .hero-section h1 {
-        font-size: 24px;
+        font-size: 45px;
+      }
+      .hero-section p{
+        font-size: 20px;
       }
     }
