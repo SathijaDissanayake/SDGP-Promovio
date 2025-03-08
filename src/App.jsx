@@ -3,7 +3,7 @@ import { useState, useRef } from 'react';
 import { Container, Row, Col, Button, Card, Form } from 'react-bootstrap';
 import { FaRocket, FaChartLine, FaBullseye, FaUsers, FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import './App.css';
-import promovio from "./assets/promovio.png"
+import Navbar from './Navbar'
 import member1 from "./assets/member1.jpg"
 import member2 from "./assets/member2.jpg"
 import member3 from "./assets/member3.jpg"
@@ -43,31 +43,10 @@ function App() {
   return (
     <div className="app-container">
       
-
-      {/* Hero Section */}
-      <section className="hero-section">
-
-         {/* Navigation Bar */}
-      <section className='navigation'>
-        <nav className="navbar">
-          <div className='logo'>
-            <img src={promovio} alt="Logo" />
-          </div>
-        <ul className="nav-links">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#about">About</a></li>
-        </ul>
-      </nav>
-
-      </section>
-        <Container>
-          <h1 className="display-2 fw-bold mb-4">Your Success, Powered by <br></br> Digital Innovation</h1>
-          <p className="lead mb-5">Elevate your brand with cutting-edge digital marketing solutions</p>
-          <Button variant="primary" size="lg" className="cta-button">Get Started Today</Button>
-        </Container>
-      </section>
+        
+    <Navbar />
+         
+      
 
       {/* Features Section */}
       <section className="features-section">
