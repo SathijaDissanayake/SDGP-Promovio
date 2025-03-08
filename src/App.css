@@ -66,12 +66,12 @@
   justify-content: center;
   display: flex;
   align-items: center;
-  background-color: rgb(168, 58, 58);
+  background-color: rgb(243, 239, 239);
   position:absolute;
   top: 5%;
   width: 45%;
   height: 60px;
-  border-radius: 31px;
+  border-radius: 30px;
   color: black;
   padding: 15px 15px;
   display: flex;
@@ -109,7 +109,7 @@
 
 /* Hero Section */
 .hero-section {
-  background-image: url('/public/gifbg1.gif'); 
+  background-image: url('/public/gifbg3.gif'); 
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat; 
