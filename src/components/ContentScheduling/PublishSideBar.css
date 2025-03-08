@@ -1,0 +1,125 @@
+/* PublishSidebar.css */
+
+/* Main Sidebar */
+.publish-sidebar {
+    width: 380px;
+    padding: 20px;
+    background-color: #2c3e50; /* Dark blue background */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: #ecf0f1; /* Light text color */
+  }
+  
+  /* Sidebar Header */
+  .sidebar-header {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ecf0f1;
+  }
+  
+  /* Section Titles */
+  .selection-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #bdc3c7; /* Lighter grayish color for section titles */
+  }
+  
+  /* Post List */
+  .post-list {
+    margin-top: 10px;
+  }
+  
+  .post-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+    cursor: pointer;
+    accent-color: #3498db; /* Blue color for checkboxes */
+  }
+  
+  /* Post Labels */
+  label {
+    font-size: 1rem;
+    color: #ecf0f1; /* Light text color */
+  }
+  
+  /* Platform Selection */
+  .platform-list {
+    margin-top: 10px;
+  }
+  
+  .platform-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  
+  .platform-label {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #ecf0f1;
+  }
+  
+  .platform-label svg {
+    margin-right: 15px;
+    font-size: 1.5rem;
+    color: #3498db; /* Icon color */
+  }
+  
+  /* Action Buttons */
+  .action-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .publish-btn, .cancel-btn {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 48%;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .publish-btn {
+    background-color: #3498db; /* Bright blue */
+    color: white;
+  }
+  
+  .cancel-btn {
+    background-color: #34495e; /* Darker blue-gray */
+    color: white;
+  }
+  
+  .publish-btn:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+  }
+  
+  .cancel-btn:hover {
+    background-color: #2c3e50; /* Darker gray-blue on hover */
+  }
+  
+  /* Responsive Design: Smaller devices */
+  @media (max-width: 600px) {
+    .publish-sidebar {
+      width: 100%;
+      padding: 15px;
+    }
+  
+    .action-buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  

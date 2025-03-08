@@ -20,6 +20,7 @@ export default function Header({ scrollToFeatures }) {
             <Link to="/dashboard" className="nav-link">Dashboards</Link>
             <Link to="/FeatureSection" className="nav-link">Features</Link>
             <Link to="/AboutUs" className="nav-link">About Us</Link>
+            <Link to="/content-scheduling" className="nav-link">ContentSchedule</Link>
             
           </nav>
 

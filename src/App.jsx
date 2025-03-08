@@ -7,7 +7,11 @@ import CheckoutPage from "./components/PricingPage/CheckoutPage";
 import FeatureSection from './components/LandingPage/FeatureSection';
 import AboutUs from './components/LandingPage/AboutUs';
 import ContentSchedulingPage from "./components/ContentScheduling/ContentSchedulingPage"; // Ensure this is correct
+import CreateIdeaModal from "./components/ContentScheduling/CreateIdeaModal";
 import './App.css';
+
+
+
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -23,6 +27,8 @@ function App() {
         <Route path="/featureSection" element={<FeatureSection />} />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/content-scheduling" element={<ContentSchedulingPage />} /> 
+        <Route path="/CreateIdeaModal" element={<CreateIdeaModal />} /> 
+       
       </Routes>
     </>
   );

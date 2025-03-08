@@ -1,48 +1,40 @@
-.analytics-container {
-    background-color: var(--card-bg);
-    border-radius: 8px;
-    padding: 16px;
-  }
-  
-  .accounts-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 16px;
-  }
-  
-  .account-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  
-  .account-icon {
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .account-icon.instagram {
-    color: #e1306c;
-  }
-  
-  .account-icon.facebook {
-    color: #1877f2;
-  }
-  
-  .account-icon.twitter {
-    color: #1da1f2;
-  }
-  
-  .account-icon.linkedin {
-    color: #0a66c2;
-  }
-  
-  .account-username {
-    font-size: 14px;
-  }
-  
-  
+/* Analytics.css */
+.analytics-buffer {
+  background-color: #1e2a47;  /* Dark Blue background */
+  color: white;               /* White text color for contrast */
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+}
+
+.analytics-buffer h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #aad4f5;  /* Light blue color for headings */
+}
+
+.analytics-buffer p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  line-height: 1.6;
+  color: #e0e7ff;  /* Light grayish blue text for better readability */
+}
+
+.analytics-buffer strong {
+  font-weight: bold;
+  color: #aad4f5;  /* Match the heading color for important text */
+}
+
+/* Adding a hover effect for each stat */
+.analytics-buffer p:hover {
+  background-color: #283a6a;  /* Darker blue background when hovered */
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.analytics-buffer p strong {
+  color: #f5a623;  /* A soft amber for strong/important numbers */
+}

@@ -1,67 +1,25 @@
-import "./Analytics.css"
-import { InstagramIcon, FacebookIcon, TwitterIcon, LinkedInIcon } from "./Icons"
+// Analytics.jsx
+import React from 'react';
+import "./Analytics.css";  // For styling
 
-const accounts = [
-  {
-    id: 1,
-    platform: "instagram",
-    icon: <InstagramIcon />,
-    username: "gauravchakrawarti2003",
-  },
-  {
-    id: 2,
-    platform: "facebook",
-    icon: <FacebookIcon />,
-    username: "gaurav-chakrawarti",
-  },
-  {
-    id: 3,
-    platform: "twitter",
-    icon: <TwitterIcon />,
-    username: "gaurav21420",
-  },
-  {
-    id: 4,
-    platform: "linkedin",
-    icon: <LinkedInIcon />,
-    username: "gauravchakrawarti123415",
-  },
-  {
-    id: 5,
-    platform: "linkedin",
-    icon: <LinkedInIcon />,
-    username: "gauravchakrawarti123415",
-  },
-  {
-    id: 6,
-    platform: "linkedin",
-    icon: <LinkedInIcon />,
-    username: "gauravchakrawarti123415",
-  },
-  {
-    id: 7,
-    platform: "linkedin",
-    icon: <LinkedInIcon />,
-    username: "gauravchakrawarti123415",
-  },
-]
+const Analytics = ({ contentData }) => {
+  // Dummy analytics data (replace with actual dynamic data)
+  const analyticsData = {
+    totalPosts: contentData.length,
+    scheduledPosts: contentData.filter(post => post.status === 'scheduled').length,
+    publishedPosts: contentData.filter(post => post.status === 'published').length,
+    upcomingPosts: contentData.filter(post => post.status === 'upcoming').length,
+  };
 
-const Analytics = () => {
   return (
-    <div className="analytics-container">
-      <h2 className="section-title">Analytics</h2>
-
-      <div className="accounts-list">
-        {accounts.map((account) => (
-          <div key={account.id} className="account-item">
-            <div className={`account-icon ${account.platform}`}>{account.icon}</div>
-            <div className="account-username">{account.username}</div>
-          </div>
-        ))}
-      </div>
+    <div className="analytics-buffer">
+      <h2>Analytics Overview</h2>
+      <p><strong>Total Posts:</strong> {analyticsData.totalPosts}</p>
+      <p><strong>Scheduled Posts:</strong> {analyticsData.scheduledPosts}</p>
+      <p><strong>Published Posts:</strong> {analyticsData.publishedPosts}</p>
+      <p><strong>Upcoming Posts:</strong> {analyticsData.upcomingPosts}</p>
     </div>
-  )
-}
+  );
+};
 
-export default Analytics
-
+export default Analytics;
