@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "../styles/CustomerForm.css";
+import axios from "axios";
+
 
 const CustomerForm = ({ customer, onSubmit, onCancel }) => {
     const [formData, setFormData] = useState(() => ({
@@ -13,14 +15,36 @@ const CustomerForm = ({ customer, onSubmit, onCancel }) => {
         industry: customer?.industry || "",
     }));
 
+    // Updates the formData state in real-time as the user types in the input fields.
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+
+    /**
+     * Handles form submission for adding or updating a customer.
+     * - If a customer exists, sends a PUT request to update the record.
+     * - If no customer exists, sends a POST request to create a new record.
+     *
+     * @param {Event} e - The form submission event.
+     */
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        onSubmit(formData);
+        try {
+            const url = customer
+                ? `http://localhost:8000/api/customers/${customer._id}`
+                : "http://localhost:8000/api/customers";
+            const method = customer ? "put" : "post";
+
+            const response = await axios({ method, url, data: formData });
+            console.log("Customer saved:", response.data);
+            onSubmit(response.data);
+        } catch (error) {
+            console.error("Error saving customer:", error);
+            alert("An error occurred while saving the customer. Please try again.");
+        }
     };
+
 
     return (
         <div className="modal-overlay">
