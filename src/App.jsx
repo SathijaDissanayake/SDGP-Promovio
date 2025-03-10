@@ -4,12 +4,8 @@ import { Container, Row, Col, Button, Card, Form } from 'react-bootstrap';
 import { FaRocket, FaChartLine, FaBullseye, FaUsers, FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import './App.css';
 import Navbar from './Navbar'
-import member1 from "./assets/member1.jpg"
-import member2 from "./assets/member2.jpg"
-import member3 from "./assets/member3.jpg"
-import member4 from "./assets/member4.jpg"
-import member5 from "./assets/member5.jpg"
-import member6 from "./assets/member6.jpg"
+import Team from './Team'
+
 
 
 
@@ -201,62 +197,8 @@ function App() {
         </Container>
       </section>
       
-
-    
-    {/* our team */}
-      <section  id="about" className='team'>
-        <h1>Our Team</h1>
-        <h4>Meet the Experts Behind Your Success! Our team of digital marketing strategists, AI specialists, and creative minds work together to deliver innovative solutions that drive growth. Passionate, results-driven, and always ahead of the curve—your success is our mission!</h4>
-
-            <div className='wrap'>
-            <div className='thambnail'>
-                <img src={member5} alt="team member1" className='image' />
-                <div className='expand'>
-                    <p>Sathija Dissanayake</p>
-                </div>
-
-              </div>
-
-              <div className='thambnail'>
-                <img src={member6} alt="team member1" className='image' />
-                <div className='expand'> <p>Mohommed Adheeb</p></div>
-
-              </div>
-
-
-              <div className='thambnail'>
-                <img src={member1} alt="team member1" className='image' />
-                <div className='expand'> <p>Omer Nuhman</p></div>
-
-              </div>
-
-              <div className='thambnail'>
-                <img src={member2} alt="team member2" className='image' />
-                <div className='expand'> <p>Dulani Kamkanamge</p></div>
-
-              </div>
-            </div>
-
-
-              <div className='wrap2'>
-
-              <div className='thambnail'>
-                <img src={member3} alt="team member3" className='image' />
-                <div className='expand'> <p>Methmi Apoorwa</p></div>
-
-              </div>
-
-              <div className='thambnail'>
-               <img src={member4} alt="team member4" className='image' />
-                <div className='expand'>
-                    <p>Menaya Karunanayake</p>
-                </div>
-
-              </div>
-              </div>
-            
-
-    </section>
+      <Team />
+  
 
 
 

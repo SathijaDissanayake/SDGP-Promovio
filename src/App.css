@@ -337,7 +337,8 @@
 }
 .thambnail{
   position: relative;
-    display: inline-block;
+  display: inline-block;
+  background-color: #2a198a;
 }
 
 .thambnail img{
