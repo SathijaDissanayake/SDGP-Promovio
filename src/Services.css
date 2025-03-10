@@ -1,0 +1,206 @@
+/* Services Section */
+.services h1 {
+    text-align: center;
+    padding: 60px;
+    font-size: 2rem;
+  }
+  
+  /* Slider Container */
+  .slider-container {
+    position: relative;
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 80px;
+  }
+  
+  /* Slider */
+  .slider {
+    display: flex;
+  gap: 20px;
+  overflow-x: hidden; /* Hide scrollbar while auto-scrolling */
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  padding: 20px 0;
+  will-change: transform; /* Helps the browser optimize scrolling */
+  }
+  
+  /* Hide scrollbar for WebKit-based browsers */
+  .slider::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Cards */
+  .cards {
+    width: 280px;
+  height: 350px;
+  background: #451670;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  }
+  
+  .cards:hover {
+    transform: scale(1.05);
+  }
+  
+  .cards p {
+    font-size: 16px;
+    color: #f3f1f1;
+    text-align: center;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-wrap: break-word;
+    max-height: 180px;
+    padding: 0 10px;
+  }
+  
+  .cards h2 {
+    color: #b05fcf;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+  
+  /* Navigation Buttons */
+  .prev,
+  .next {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8629aa;
+    transition: color 0.3s;
+  }
+  
+  .prev {
+    left: -40px;
+  }
+  
+  .next {
+    right: -40px;
+  }
+  
+  .prev:hover,
+  .next:hover {
+    color: #2a198a;
+  }
+  
+  /* Responsive Design */
+  
+  /* Small screens (tablets & mobile) */
+  @media (max-width: 1024px) {
+    .slider-container {
+      width: 100%;
+      padding-bottom: 60px;
+    }
+  
+    .cards {
+      width: 250px;
+      height: 320px;
+    }
+  
+    .cards p {
+      font-size: 15px;
+      padding: 0 5px;
+    }
+  
+    .prev,
+    .next {
+      font-size: 20px;
+      padding: 5px;
+      top: 45%;
+    }
+  }
+  
+  /* Mobile Devices */
+  @media (max-width: 768px) {
+    .services h1 {
+      font-size: 1.8rem;
+      padding: 40px;
+    }
+  
+    .slider-container {
+      width: 95%;
+      padding-bottom: 50px;
+    }
+  
+    .slider {
+      gap: 10px;
+    }
+  
+    .cards {
+      width: 220px;
+      height: 300px;
+    }
+  
+    .cards h2 {
+      font-size: 20px;
+    }
+  
+    .cards p {
+      font-size: 14px;
+      max-height: 150px;
+    }
+  
+    .prev,
+    .next {
+      font-size: 18px;
+      padding: 5px;
+      top: 50%;
+    }
+  }
+  
+  /* Very Small Devices (Phones under 480px) */
+  @media (max-width: 480px) {
+    .services h1 {
+      font-size: 1.5rem;
+      padding: 30px;
+    }
+  
+    .slider-container {
+      width: 100%;
+      padding-bottom: 40px;
+    }
+  
+    .cards {
+      width: 200px;
+      height: 280px;
+    }
+  
+    .cards h2 {
+      font-size: 18px;
+    }
+  
+    .cards p {
+      font-size: 13px;
+      max-height: 130px;
+    }
+  
+    .prev,
+    .next {
+      font-size: 16px;
+      top: 50%;
+      padding: 3px;
+    }
+  }
+  

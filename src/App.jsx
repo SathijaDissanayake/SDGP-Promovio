@@ -5,6 +5,8 @@ import { FaRocket, FaChartLine, FaBullseye, FaUsers, FaFacebookF, FaTwitter, FaL
 import './App.css';
 import Navbar from './Navbar'
 import Team from './Team'
+import Services from './Services'
+
 
 
 
@@ -41,7 +43,7 @@ function App() {
       
         
     <Navbar />
-         
+      
       
 
       {/* Features Section */}
@@ -85,45 +87,9 @@ function App() {
       <div className='box'>
           <h2>AI-Powered Marketing Made Simple: <br></br> Generate Engaging Content, <br></br>Track Performance, Optimize Spend,<br></br> and Automate Customer Support<br></br>ALL IN ONE SMART PLATFORM. </h2>
       </div>
+
+      <Services />
     
-
-      {/* Services Section */}
-      <section id="services" className='services'>
-      <h1>Our Services</h1>
-      <div className='slider-container'>
-      <button className="prev" onClick={() => scrollSlider(-1)}>&lt;</button>
-      <div className='slider' ref={sliderRef}>
-        
-          <div className='cards'>
-              <h2>Social media management</h2>
-              <p>Effortlessly schedule content across Facebook, Instagram, Twitter, and LinkedIn while tracking campaign performance—all in one place!</p>
-          </div>
-
-          <div className='cards'>
-              <h2>Customer Relationship Management </h2>
-              <p>Seamlessly manage customer relationships with a powerful CRM—track interactions, nurture leads, and build lasting connections, all in one intuitive platform!</p>
-          </div>
-
-          <div className='cards'>
-              <h2>Analytics Dashboard</h2>
-              <p>Gain deep insights with a powerful analytics dashboard—track performance, monitor key metrics, and optimize campaigns in real time, all from one centralized platform!</p>
-          </div>
-
-          <div className='cards'>
-              <h2>Customer Support Chatbot</h2>
-              <p>Enhance customer experience with an AI-powered chatbot—provide instant support, answer queries, and engage users 24/7, all while streamlining your workflow!</p>
-          </div>
-
-          <div className='cards'>
-              <h2>Integration with Meta API</h2>
-              <p>Seamlessly integrate with the Meta API—effortlessly post, track performance, and analyze content across Facebook and Instagram from one powerful platform!</p>
-          </div>
-
-          <button className="next" onClick={() => scrollSlider(1)}>&gt;</button>
-      </div>
-      </div>
-      </section>
-
 
       {/* Pricing Section */}
       <section id="pricing" className="pricing-section">

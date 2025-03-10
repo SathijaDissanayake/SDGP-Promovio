@@ -5,7 +5,7 @@
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(50px);
   }
   to {
     opacity: 1;
@@ -66,15 +66,13 @@
   padding: 30px;
   background: #241B2F;
   border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   opacity: 1;
-  animation: fadeInUp 0.6s ease forwards;
+  animation: fadeInUp 10s ease forwards;
 }
 
 .feature-card:hover {
   transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 15px 30px rgba(138, 43, 226, 0.2);
+  
 }
 
 .feature-icon {
@@ -86,7 +84,7 @@
 }
 
 .feature-card:hover .feature-icon {
-  transform: scale(1.2);
+  transform: scale(2.2);
   color: #9B30FF;
 }
 /* Text Section*/
@@ -104,106 +102,6 @@
   padding-left: 100px;
 }
 
-
-
-
-
-/* Services Section */
-.services h1{
-  text-align: center;
-  padding: 60px;
-}
-.slider-container {
-  position: relative;
-  width: 80%;
-  margin: auto;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 100px;
-}
-.cards{
-    width: 280px;
-    height: 350px;
-    background: #451670;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    padding: 10px;
-    transition: transform 0.3s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    overflow: hidden;  
-}
-.cards:hover {
-  transform: scale(1.05);
-}
-.cards p{
-    font-size: 18px;
-    color: #f3f1f1;
-    text-align: center;
-    line-height: 1.4;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
-    word-wrap: break-word;
-    max-height: 180px; 
-    padding: 0 5px;
-  
-}
-.cards h2{
-  color: #b05fcf;
-  font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    white-space: normal; 
-    word-wrap: break-word;
-}
-.slider {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  white-space: nowrap;
-  padding: 20px 0;
-}
-
-.prev, .next {
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 10px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #8629aa;
-  transition: color 0.3s;
-}
-
-.prev {
-  left: 0;
-}
-
-.next {
-  right: 0;
-}
-.prev:hover, .next:hover {
-  color: #2a198a;
-}
-
-
-
-
-
-.slider::-webkit-scrollbar {
-  display: none;
-}
 
 
 
@@ -308,80 +206,6 @@
   transform: translateY(-2px);
 }
 
-/*our team*/
-.team{
-  padding-top: 45px;
-  padding-bottom: 110px;
-}
-.team h1{
-  text-align: center;
-}
-.team h4{
-  padding-right: 70px;
-  padding-left: 70px;
-  padding-top: 30px;
-  text-align: center;
-}
-.wrap{
-  display: flex;
-  padding-top: 50px;
-  padding-bottom:40px ;
-  justify-content: center;
-}
-.wrap2{
-  display: flex;
-  padding-top: 20px;
-  padding-bottom:40px ;
-  justify-content: center;
-
-}
-.thambnail{
-  position: relative;
-  display: inline-block;
-  background-color: #2a198a;
-}
-
-.thambnail img{
-  width: 230px;
-  height: 180px;
-  border-radius: 50%;
-  padding-left: 30px;
-  padding-right: 30px;
-  
-
-}
-.image{
-  
-  transition: .5s ease;
-  backface-visibility: hidden;
-}
-.image:hover{
-  transform: scale(1.1);
-  
-}
-.expand{
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center
-}
-.expand p{
-  background-color: #a44cc7;
-  color: white;
-  font-size: 12px;
-  padding: 16px 20px;
-}
-.thambnail:hover .image {
-  opacity: 0.3;
-}
-
-.thambnail:hover .expand {
-  opacity: 1;
-}
 
 
 /* Footer  */
@@ -501,7 +325,7 @@
 
 /* Button Styles */
 .btn-primary {
-  background: linear-gradient(45deg, #8A2BE2, #ff914d);
+  background: linear-gradient(45deg, #8A2BE2, #e08a55);
   border: none;
   transition: all 0.3s ease;
   position: relative;
@@ -529,7 +353,7 @@
 .btn-primary:hover {
   background: linear-gradient(45deg, #9B30FF, #ff914d);
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+  
 }
 
 /* Responsive Design */
