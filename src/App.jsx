@@ -83,10 +83,6 @@ function App() {
         </Container>
       </section>
 
-      {/* text section */}
-      <div className='box'>
-          <h2>AI-Powered Marketing Made Simple: <br></br> Generate Engaging Content, <br></br>Track Performance, Optimize Spend,<br></br> and Automate Customer Support<br></br>ALL IN ONE SMART PLATFORM. </h2>
-      </div>
 
       <Services />
     

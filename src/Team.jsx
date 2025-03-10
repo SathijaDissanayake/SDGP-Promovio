@@ -19,7 +19,7 @@ const teamMembers = [
 
 const Team = () => {
   return (
-    <section className="team-section">
+    <section  id='about' className="team-section">
       <h1>Meet Our Team</h1>
       <h4>Meet our expert team of digital strategists, AI specialists, and creatives, dedicated to driving growth with innovative solutions. Your success is our mission!</h4>
       <div className="team-grid">

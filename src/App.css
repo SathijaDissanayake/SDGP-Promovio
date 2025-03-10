@@ -87,20 +87,6 @@
   transform: scale(2.2);
   color: #9B30FF;
 }
-/* Text Section*/
-.box{
-  background-image: url('/public/gifbg2.gif'); 
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
-  padding-top: 100px;
-  padding-bottom: 100px;
-  width: 100%;
-}
-.box h2{
-  padding-top: 3%;
-  padding-left: 100px;
-}
 
 
 

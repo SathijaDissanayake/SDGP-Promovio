@@ -6,7 +6,7 @@ const Services = () => {
   useEffect(() => {
     const slider = sliderRef.current;
     let scrollAmount = 0;
-    let scrollSpeed = 1; // Adjust this value for faster/slower scrolling
+    let scrollSpeed = 2; // Adjust this value for faster/slower scrolling
 
     const scroll = () => {
       if (slider) {
