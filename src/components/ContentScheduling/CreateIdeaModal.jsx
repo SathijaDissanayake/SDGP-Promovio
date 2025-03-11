@@ -1,10 +1,11 @@
 import { useState } from "react";
+import axios from "axios";
 import "./CreateIdeaModal.css";
 
 const CreateIdeaModal = ({ onClose }) => {
   const [file, setFile] = useState(null);
+  const [generatedContent, setGeneratedContent] = useState("");
 
-  // Handle File Drop
   const handleDrop = (event) => {
     event.preventDefault();
     const uploadedFile = event.dataTransfer.files[0];
@@ -13,13 +14,35 @@ const CreateIdeaModal = ({ onClose }) => {
     }
   };
 
-  // Handle File Selection
   const handleFileChange = (event) => {
     const uploadedFile = event.target.files[0];
     if (uploadedFile) {
       setFile(uploadedFile);
     }
   };
+
+  // 🧠 Function to Call OpenAI API for Content Generation
+  // CreateIdeaModal.jsx
+
+const handleAIContentGeneration = async () => {
+  try {
+    const response = await axios.post("http://localhost:5000/api/content/generate", {
+      prompt: "Generate a creative idea for content creation",  // The AI prompt
+      author: "User Name",  // The author of the content
+      contentType: "blog",  // The type of content (e.g., blog, social, email)
+    });
+
+    // Check if content was successfully generated and saved
+    if (response.data.success) {
+      setGeneratedContent(response.data.content.body); // Set the generated content to the state
+    } else {
+      alert("Error generating content.");
+    }
+  } catch (error) {
+    console.error("Error generating content:", error);
+  }
+};
+
 
   return (
     <div className="modal-overlay" onDragOver={(e) => e.preventDefault()} onDrop={handleDrop}>
@@ -30,10 +53,10 @@ const CreateIdeaModal = ({ onClose }) => {
         <input type="text" placeholder="Give your idea a title" />
 
         {/* Description */}
-        <textarea placeholder="Describe your idea..."></textarea>
+        <textarea placeholder="Describe your idea..." value={generatedContent}></textarea>
 
         {/* AI Assistant Button */}
-        <button className="ai-btn">✨ Use AI Assistant</button>
+        <button className="ai-btn" onClick={handleAIContentGeneration}>✨ Use AI Assistant</button>
 
         {/* Drag & Drop or File Upload */}
         <div className="file-upload">

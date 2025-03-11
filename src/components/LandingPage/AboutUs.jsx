@@ -58,12 +58,12 @@ const AboutUs = () => {
         <section className="team">
           <h3 className="section-title">Our Team</h3>
           <div className="team-grid">
-            <TeamMember name="Sathija Gayara Dissanayake" role="Project Lead" avatar= {sathija}/>
-            <TeamMember name="Mohamed Adheeb AbdulRahuman" role="Backend Developer" avatar={adheeb}/>
-            <TeamMember name="Naslam Nuhman Ahamed Omar" role="Frontend Developer" avatar={omar} />
-            <TeamMember name="Methmi Apoorwa Liyanage" role="UI/UX Designer" avatar={apoorwa}/>
-            <TeamMember name="Dulani Linara Kamkanamge" role="Data Analyst" avatar={dulani} />
-            <TeamMember name="Lihini Menaya Karunanayake" role="Marketing Specialist" avatar={menaya}/>
+            <TeamMember name="Sathija Dissanayake" role="Project Lead" avatar= {sathija}/>
+            <TeamMember name="Mohommad Adheeb " role="Backend Developer" avatar={adheeb}/>
+            <TeamMember name="Ahamed Omar" role="Frontend Developer" avatar={omar} />
+            <TeamMember name="Apoorwa Liyanage" role="UI/UX Designer" avatar={apoorwa}/>
+            <TeamMember name="Dulani Kamkanamge" role="Data Analyst" avatar={dulani} />
+            <TeamMember name="Menaya Karunanayake" role="Marketing Specialist" avatar={menaya}/>
           </div>
         </section>
 
