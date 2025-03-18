@@ -6,7 +6,7 @@ import ContentCalendar from "./ContentCalendar"; // Updated Import
 import { PlusIcon, CalendarIcon } from "./Icons";
 import CreateIdeaModal from "./CreateIdeaModal";
 import Analytics from './Analytics';  // Import the Analytics component
-import PublishSidebar from './PublishSidebar'; // Import the new Publish Sidebar component
+import PublishSidebar from"./PublishSideBar"; // Import the new Publish Sidebar component
 
 const ContentScheduling = () => {
   const [activeTab, setActiveTab] = useState("scheduled");
@@ -34,10 +34,7 @@ const ContentScheduling = () => {
     <div className="content-scheduling">
       <div className="content-header">
         <h1>Content Scheduling</h1>
-        <div className="search-customers">
-          <input type="text" placeholder="Search..." />
-          <button className="search-btn">Search Customers</button>
-        </div>
+        
       </div>
 
       <div className="content-actions">

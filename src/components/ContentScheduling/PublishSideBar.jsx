@@ -1,4 +1,3 @@
-// PublishSidebar.jsx
 import React, { useState } from 'react';
 import { FaInstagram, FaTwitter, FaYoutube, FaTiktok, FaLinkedin } from 'react-icons/fa';  // Importing icons
 import "./PublishSidebar.css";
@@ -33,7 +32,7 @@ const PublishSidebar = ({ contentData }) => {
 
       {/* Post Selection */}
       <div className="selection-section">
-        <h3>Select Posts</h3>
+        <button>Select Posts</button>
         <div className="post-list">
           {contentData.map((post) => (
             <div key={post.id} className="post-option">
@@ -52,24 +51,40 @@ const PublishSidebar = ({ contentData }) => {
       <div className="selection-section">
         <h3>Select Platforms</h3>
         <div className="platform-list">
-          {[
-            { platform: 'Instagram', icon: <FaInstagram /> },
-            { platform: 'TikTok', icon: <FaTiktok /> },
-            { platform: 'Twitter', icon: <FaTwitter /> },
-            { platform: 'YouTube', icon: <FaYoutube /> },
-            { platform: 'LinkedIn', icon: <FaLinkedin /> }
-          ].map(({ platform, icon }) => (
-            <div key={platform} className="platform-option">
-              <input
-                type="checkbox"
-                checked={selectedPlatforms.includes(platform)}
-                onChange={() => togglePlatformSelection(platform)}
-              />
-              <label className="platform-label">
-                {icon} {platform}
-              </label>
-            </div>
-          ))}
+          <div className="checkbox-container">
+            {[{
+              platform: 'Instagram',
+              icon: <FaInstagram />
+            },
+            {
+              platform: 'TikTok',
+              icon: <FaTiktok />
+            },
+            {
+              platform: 'Twitter',
+              icon: <FaTwitter />
+            },
+            {
+              platform: 'YouTube',
+              icon: <FaYoutube />
+            },
+            {
+              platform: 'LinkedIn',
+              icon: <FaLinkedin />
+            }]
+            .map(({ platform, icon }) => (
+              <div key={platform} className="platform-option">
+                <input
+                  type="checkbox"
+                  checked={selectedPlatforms.includes(platform)}
+                  onChange={() => togglePlatformSelection(platform)}
+                />
+                <label className="platform-label">
+                  {icon} {platform}
+                </label>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

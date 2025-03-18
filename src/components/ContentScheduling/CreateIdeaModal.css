@@ -1,134 +1,216 @@
-/* Modal Overlay */
+/* General Modal Styling */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
-  align-items: center;
   justify-content: center;
-  backdrop-filter: blur(6px);
-  z-index: 1000;
-  animation: fadeIn 0.3s ease-in-out;
+  align-items: center;
 }
 
-/* Modal Content */
 .modal-content {
-  background: #0f172a; /* Deep Dark Blue */
-  padding: 25px;
-  width: 450px;
+  background: #1e293b;
+  padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  width: 400px;
+  max-height: 90vh; /* Prevents excessive height */
+  overflow-y: auto; /* Enables scrolling if needed */
   text-align: center;
-  color: #e2e8f0; /* Light Gray Text */
-  font-family: "Poppins", sans-serif;
-  animation: slideIn 0.4s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease-in-out;
+  padding-bottom: 20px;
 }
 
-/* Title */
-.modal-content h2 {
-  font-size: 22px;
-  font-weight: 600;
+
+h2 {
+  color: #93c5fd;
   margin-bottom: 15px;
-  color: #93c5fd; /* Light Blue */
+  font-size: 22px;
 }
 
 /* Input Fields */
-.modal-content input,
-.modal-content textarea {
+input, textarea {
   width: 100%;
-  padding: 12px;
-  margin: 10px 0;
+  padding: 10px;
+  margin: 8px 0;
+  background: #1e293b;
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
-  background: #1e293b; /* Darker Blue */
   color: white;
   font-size: 14px;
   outline: none;
-  transition: 0.3s ease-in-out;
+  transition: 0.3s;
 }
 
-.modal-content input::placeholder,
-.modal-content textarea::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+input:focus, textarea:focus {
+  border-color: #60a5fa;
 }
 
-.modal-content input:focus,
-.modal-content textarea:focus {
-  border-color: #60a5fa; /* Light Blue Border */
+textarea {
+  min-height: 80px;
+  resize: none;
 }
 
 /* AI Assistant Button */
 .ai-btn {
   width: 100%;
-  padding: 12px;
-  margin-top: 12px;
-  background: linear-gradient(45deg, #2563eb, #3b82f6);
+  padding: 10px;
+  background: #3b82f6;
   color: white;
   border: none;
   border-radius: 8px;
-  font-size: 15px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 8px;
+  transition: 0.3s;
+}
+
+.ai-btn:hover {
+  background: #2563eb;
+}
+
+/* File Upload */
+.file-upload {
+  margin-top: 12px;
+  background: #334155;
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.file-drop {
+  cursor: pointer;
+  display: block;
+  padding: 10px;
+  text-align: center;
+  color: #e2e8f0;
+  font-size: 14px;
+}
+
+.file-drop:hover {
+  color: #60a5fa;
+}
+
+.file-select {
+  color: #93c5fd;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Modal Action Buttons */
+.modal-actions {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.save-btn, .close-btn {
+  width: 48%;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+  border: none;
+}
+
+.save-btn {
+  background: #10b981;
+  color: white;
+}
+
+.save-btn:hover {
+  background: #059669;
+}
+
+.close-btn {
+  background: #ef4444;
+  color: white;
+}
+
+.close-btn:hover {
+  background: #dc2626;
+}
+
+
+
+.publish-options button {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+  border: none;
+}
+
+
+
+/* Schedule Options */
+.schedule-options {
+  margin-top: 10px;
+  text-align: left;
+}
+
+.schedule-options label {
+  display: block;
+  font-size: 14px;
+  color: #e2e8f0;
+  margin-bottom: 5px;
+}
+
+.schedule-options input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  background: #1e293b;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 14px;
+  outline: none;
+  margin-bottom: 8px;
+}
+
+.schedule-options input:focus {
+  border-color: #60a5fa;
+}
+
+/* Confirm Button */
+.confirm-btn {
+  width: 100%;
+  padding: 10px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
   cursor: pointer;
   transition: 0.3s;
   font-weight: 500;
 }
 
-.ai-btn:hover {
-  background: linear-gradient(45deg, #3b82f6, #2563eb);
-}
-
-/* File Upload Box */
-.file-upload {
-  margin-top: 15px;
-}
-
-
-
-.file-select {
-  color: #60a5fa;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* Modal Buttons */
-.modal-actions {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-.save-btn,
-.close-btn {
-  padding: 12px 18px;
-  border: none;
-  border-radius: 8px;
-  font-size: 14px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: 0.3s ease-in-out;
-}
-
-.save-btn {
-  background: #3b82f6;
-  color: white;
-}
-
-.save-btn:hover {
+.confirm-btn:hover {
   background: #2563eb;
 }
 
-.close-btn {
-  background: rgba(255, 255, 255, 0.2);
+/* Success Message Styling */
+.success-message {
+  background-color: #4caf50;
   color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
 }
 
-.close-btn:hover {
-  background: rgba(255, 255, 255, 0.4);
-}
-
-/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -138,11 +220,15 @@
   }
 }
 
-@keyframes slideIn {
+
+/* Animations */
+@keyframes fadeIn {
   from {
-    transform: translateY(-20px);
+    opacity: 0;
+    transform: scale(0.95);
   }
   to {
-    transform: translateY(0);
+    opacity: 1;
+    transform: scale(1);
   }
 }

@@ -17,7 +17,7 @@ const Analytics = ({ contentData }) => {
       <p><strong>Total Posts:</strong> {analyticsData.totalPosts}</p>
       <p><strong>Scheduled Posts:</strong> {analyticsData.scheduledPosts}</p>
       <p><strong>Published Posts:</strong> {analyticsData.publishedPosts}</p>
-      <p><strong>Upcoming Posts:</strong> {analyticsData.upcomingPosts}</p>
+      
     </div>
   );
 };
