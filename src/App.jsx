@@ -1,12 +1,12 @@
-import { ChatProvider } from "./ChatContext"
-import ChatInterface from "./ChatInterface"
-import "./styles.css"
+import Chatbot from './components/Chatbot'
 
-export default function App() {
+
+function App() {
   return (
-    <ChatProvider>
-      <ChatInterface />
-    </ChatProvider>
-  )
+    <div>
+      <Chatbot /> 
+    </div>
+  );
 }
 
+export default App;
