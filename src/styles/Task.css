@@ -26,6 +26,12 @@ body {
     color: #b79af8;
 }
 
+.task-footer {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
 .add-task-button {
     background: rgba(183, 154, 248, 0.2);
     color: #b79af8;
@@ -110,6 +116,8 @@ body {
     border-radius: 12px;
     font-size: 12px;
     font-weight: 500;
+    margin-bottom: 5px; /* Added space below priority */
+    margin-right: 5px;
 }
 
 .task-priority.high {
@@ -122,4 +130,179 @@ body {
     color: #ffaa33;
 }
 
-.task
+.task-priority.low {
+    background-color: rgba(183, 255, 0, 0.1);
+    color: #daff33;
+}
+
+/* Assignee Text */
+.task-assignee {
+    font-size: 12px; /* Smaller font for assignee */
+    color: #b3b3b3;
+}
+
+.delete-task-button {
+    background: none;
+    border: none;
+    color: #ff4d4d;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.delete-task-button:hover {
+    color: #ff0000;
+    transform: scale(1.1);
+}
+
+
+/* Modal */
+/* Modal Background */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Modal Container */
+.modal-content {
+    background: #1e1e2e;
+    color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    max-width: 90%;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Modal Header */
+/* Modal Background */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align at the top */
+    z-index: 1000;
+    padding-top: 20px; /* Space from top */
+}
+
+/* Modal Container */
+.modal-content {
+    background: #1e1e2e;
+    color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    max-width: 90%;
+    position: relative;
+    animation: slideDown 0.3s ease-in-out;
+}
+
+/* Modal Header */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.modal-header h2 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Close Button */
+.close-btn {
+    background: transparent;
+    border: none;
+    color: #aaa;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #ff5c5c;
+}
+
+/* Form Fields */
+.task-form label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: #ccc;
+}
+
+.task-form input,
+.task-form select,
+.task-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background: #282a36;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.task-form input:focus,
+.task-form select:focus,
+.task-form textarea:focus {
+    border: 1px solid #8257e5;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: #8257e5;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #6842c2;
+}
+
+/* Slide Down Animation */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .modal-content {
+        width: 90%;
+        padding: 15px;
+    }
+}

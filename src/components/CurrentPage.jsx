@@ -1,50 +1,33 @@
+import { FaUser, FaEnvelope, FaTasks, FaClock } from "react-icons/fa";
 import "../styles/currentpage.css";
-import SearchBar from "./SearchBar"; // Import SearchBar
 
 export default function CurrentPage({ setActiveTab, activeTab }) {
+    const tabs = [
+        { name: "Contacts", icon: <FaUser /> },
+        { name: "Email", icon: <FaEnvelope /> },
+        { name: "Task", icon: <FaTasks /> },
+        { name: "Reminder", icon: <FaClock /> }
+    ];
+
     return (
         <div className="currentPageContainer">
-            <div className="currentPageHeader">
-                <div className="header-left">
-                    <div className="title">
-                        <h2>CRM</h2>
-                    </div>
-                    <div className="tabs">
-                        <button
-                            className={`tab ${activeTab === "Contacts" ? "active" : ""}`}
-                            onClick={() => setActiveTab("Contacts")}
-                        >
-                            Contacts
-                        </button>
-                        <button
-                            className={`tab ${activeTab === "Email" ? "active" : ""}`}
-                            onClick={() => setActiveTab("Email")}
-                        >
-                            Email
-                        </button>
-                        <button
-                            className={`tab ${activeTab === "Task" ? "active" : ""}`}
-                            onClick={() => setActiveTab("Task")}
-                        >
-                            Task
-                        </button>
-                        <button
-                            className={`tab ${activeTab === "Reminder" ? "active" : ""}`}
-                            onClick={() => setActiveTab("Reminder")}
-                        >
-                            Reminder
-                        </button>
-                    </div>
-                </div>
-
-                <div className="header-search">
-                    <input type="text" placeholder="Search..." className="search-input" />
-                    <button className="search-customers">Search Customers</button>
-                </div>
+            <div className="title">
+                <h2>CRM</h2>
             </div>
 
-            {/* Conditionally render SearchBar only when activeTab is "Contacts" */}
-            {activeTab === "Contacts" && <SearchBar />}
+            {/* Header Section */}
+            <div className="currentPageHeader">
+                {tabs.map(({ name, icon }) => (
+                    <button
+                        key={name}
+                        className={`tab ${activeTab === name ? "active" : ""}`}
+                        onClick={() => setActiveTab(name)}
+                    >
+                        <span className="tab-icon">{icon}</span>
+                        {name}
+                    </button>
+                ))}
+            </div>
         </div>
     );
 }

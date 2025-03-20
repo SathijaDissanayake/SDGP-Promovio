@@ -1,92 +1,186 @@
-/* Center the table on the page */
-/*.table-container {*/
-/*    padding: 30px;*/
-/*    background: #1e1e2e;*/
-/*    border-radius: 12px;*/
-/*    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);*/
-/*    margin: 50px auto;*/
-/*    width: 90%;*/
-/*    max-width: 1200px;*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*}*/
 
-/* Table Styling */
-.lead-table {
+
+.table-container{
+
     width: 100%;
-    border-collapse: collapse;
-    background: #2a2a3a;
-    border-radius: 12px;
+    margin: 20px 0;
+    border-radius: 8px;
     overflow: hidden;
-    margin: 10px 0;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    background-color: #1e1e2f;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Table Header */
-.lead-table thead {
-    background-color: #3b3b52;
+
+.rdt_Table {
+    background-color: #121212 !important; /* Dark mode */
+    color: #ffffff !important;
+    font: 14px 'Roboto', 'inter', sans-serif;
 }
 
-.lead-table th {
-    padding: 16px;
-    text-align: center;
-    font-weight: bold;
-    border-bottom: 2px solid #444;
-    color: #e0e0e0;
-    width: 20%; /* Ensuring equal spacing */
+/* Table head (column names) */
+.rdt_TableHead {
+    background-color: #222222 !important;
+    color: #a970ff !important;
 }
 
-/* Table Body */
-.lead-table td {
-    padding: 14px;
-    text-align: center;
-    border-bottom: 1px solid #444;
-    color: #b0b0b0;
+/* Table head row */
+.rdt_TableHeadRow {
+    background-color: #222222 !important;
+    color: #a970ff !important;
+    font: 14px 'Roboto', 'inter', sans-serif;
+
 }
 
-/* Alternate Row Colors */
-.lead-table tbody tr:nth-child(odd) {
-    background-color: #252536;
+/* Table columns */
+.rdt_TableCol {
+    color: #a970ff !important;
 }
 
-.lead-table tbody tr:hover {
-    background-color: #33334d;
-    transition: background 0.3s ease-in-out;
+/* Sortable column headers */
+.rdt_TableCol_Sortable {
+    color: #a970ff !important;
 }
 
-/* Action Buttons */
+/* Table rows */
+.rdt_TableRow {
+    background-color: #141414 !important;
+    color: #ffffff !important;
+}
+
+/* Hover effect */
+.rdt_TableRow:hover {
+    background-color: #292929 !important;
+}
+
+/* Table cells */
+.rdt_TableCell {
+    border-bottom: 1px solid #333333 !important;
+}
+
+/* Table body */
+.rdt_TableBody {
+    background-color: #121212 !important;
+}
+
+/* Table footer */
+.rdt_TableFooter {
+    background-color: #222222 !important;
+    color: #a970ff !important;
+}
+
+/* Expandable row */
+.rdt_ExpanderRow {
+    background-color: #1a1a1a !important;
+}
+
+
 .action-btn {
-    padding: 8px 14px;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    border: none;
-    outline: none;
+    background-color: #6441a5;
     color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 8px;
+    margin-right: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
 }
 
-.view-btn {
-    background-color: #6b7280;
+.action-btn:hover {
+    background-color: #7e56c2;
 }
 
-.view-btn:hover {
-    background-color: #4b5563;
+
+.create-btn{
+    background-color: #714bb8;
+    color: white;
+    border: none;
+    margin: 10px;
+    border-radius: 6px;
+    padding: 8px 16px;
+    cursor: pointer;
+    /*font-size: 14px;*/
+    transition: background-color 0.3s ease;
+}
+.create-btn:hover {
+    background-color: #260257;
 }
 
-.edit-btn {
-    background-color: #facc15;
+
+
+
+/* Pagination */
+
+
+
+/* Pagination Buttons */
+/* Pagination Container */
+.rdt_Pagination {
+    background-color: #222222 !important; /* Almost black */
+    color: #cccccc !important;
+    padding: 12px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-.edit-btn:hover {
-    background-color: #eab308;
+/* Pagination Buttons */
+.rdt_Pagination button {
+    background-color: #6441a5; /* Purple accent */
+    color: #ffffff !important; /* White text */
+    border: 1px solid transparent;
+    padding: 8px 14px;
+    margin: 0 5px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
-.delete-btn {
-    background-color: #ef4444;
+/* Hover effect for buttons */
+.rdt_Pagination button:hover {
+    background-color: #a970ff; /* Purple accent */
+    border-color: #a970ff;
+    color: #ffffff;
 }
 
-.delete-btn:hover {
-    background-color: #dc2626;
+/* Active Page Number */
+.rdt_Pagination .selected {
+    background-color: #a970ff !important;
+    color: #ffffff ;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-weight: bold;
+}
+
+/* Disabled Buttons */
+.rdt_Pagination button:disabled {
+    background-color: transparent;
+    color: #555; /* Subtle gray */
+    cursor: not-allowed;
+    border-color: transparent;
+}
+
+/* Arrows Styling */
+.rdt_Pagination button svg {
+    fill: #cccccc;
+    width: 18px;
+    height: 18px;
+}
+
+/* Rows per page dropdown */
+.rdt_Pagination select {
+    background-color: #1c1c1c; /* Dark gray */
+    color: #ffffff;
+    border: 1px solid #444;
+    padding: 6px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Dropdown Hover */
+.rdt_Pagination select:hover {
+    border-color: #a970ff;
 }

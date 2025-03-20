@@ -1,24 +1,32 @@
+import "../styles/searchbar.css";
 
-import '../styles/SearchBar.css';
+// Modified SearchBar.jsx
+export default function SearchBar({ onFilterChange, activeFilter }) {
+    const filters = ["All", "New Lead", "Contacted", "Interested", "Negotiation", "Converted", "Lost"];
 
+    const handleFilterClick = (status) => {
+        if (typeof onFilterChange === 'function') {
+            onFilterChange(status);
+        } else {
+            console.warn('onFilterChange is not a function');
+        }
+    };
 
-
-export default function SearchBar() {
     return (
-
         <div className="search-bar-container">
             <div className="tabs-container">
                 <div className="filters">
-                    <button className="button button-all">All</button>
-                    <button className="button button-newLead">New Lead</button>
-                    <button className="button button-contacted">Contacted</button>
-                    <button className="button button-interested">Interested</button>
-                    <button className="button button-negotiation">Negotiation</button>
-                    <button className="button button-converted">Converted</button>
-                    <button className="button button-lost">Lost</button>
+                    {filters.map((status) => (
+                        <button
+                            key={status}
+                            className={`button ${activeFilter === status ? 'active' : ''}`}
+                            onClick={() => handleFilterClick(status)}
+                        >
+                            {status}
+                        </button>
+                    ))}
                 </div>
             </div>
         </div>
-
     );
 }

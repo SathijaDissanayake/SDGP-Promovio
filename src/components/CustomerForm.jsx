@@ -2,14 +2,20 @@ import { useState } from "react";
 import "../styles/CustomerForm.css";
 import axios from "axios";
 
+// Convert lastContact to YYYY-MM-DD format for the input field
+const formatDateForInput = (dateString) => {
+    if (!dateString) return ""; // Handle empty value
+    const date = new Date(dateString);
+    return date.toISOString().split("T")[0]; // Extract YYYY-MM-DD
+};
 
 const CustomerForm = ({ customer, onSubmit, onCancel }) => {
     const [formData, setFormData] = useState(() => ({
-        fullName: customer?.contact || "",
+        fullName: customer?.fullName || "",
         email: customer?.email || "",
         phone: customer?.phone || "",
         leadStatus: customer?.leadStatus || "New Lead",
-        lastContact: customer?.lastContact || "",
+        lastContact: formatDateForInput(customer?.lastContact),
         companyName: customer?.companyName || "",
         jobTitle: customer?.jobTitle || "",
         industry: customer?.industry || "",
@@ -30,13 +36,17 @@ const CustomerForm = ({ customer, onSubmit, onCancel }) => {
      */
     const handleSubmit = async (e) => {
         e.preventDefault();
+        // Convert lastContact to ISO format before sending to the backend
+        const formattedData = {
+            ...formData,
+            lastContact: formData.lastContact ? new Date(formData.lastContact).toISOString() : null
+        };
         try {
             const url = customer
                 ? `http://localhost:8000/api/customers/${customer._id}`
                 : "http://localhost:8000/api/customers";
             const method = customer ? "put" : "post";
-
-            const response = await axios({ method, url, data: formData });
+            const response = await axios({ method, url, data: formattedData });
             console.log("Customer saved:", response.data);
             onSubmit(response.data);
         } catch (error) {

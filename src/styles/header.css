@@ -25,27 +25,9 @@
 .header-search .button {
     padding: 8px 12px;
 }
-/* User Profile on the Top Left */
-.user-profile {
-    position: absolute;
-    top: 0.5rem;
-    left: 1rem;
-    font-size: 0.9rem;
-    color: #ccc; /* Slightly lighter color for subtle effect */
-    font-weight: normal;
-}
 
-/* Navigation Menu */
-/*.header nav a {*/
-/*    color: #fff;*/
-/*    text-decoration: none;*/
-/*    margin: 0 1rem;*/
-/*    font-size: 1.1rem;*/
-/*}*/
 
-/*.header nav a:hover {*/
-/*    color:  #8f5de8; !* Purple hover effect *!*/
-/*}*/
+
 nav {
     display: flex;
     gap: 20px;
