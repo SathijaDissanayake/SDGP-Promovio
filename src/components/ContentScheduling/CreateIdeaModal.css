@@ -1,234 +1,145 @@
-/* General Modal Styling */
+/* Modal Overlay */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(42, 3, 59, 0.7); /* Dark overlay */
   display: flex;
-  justify-content: center;
   align-items: center;
-}
-
-.modal-content {
-  background: #1e293b;
-  padding: 20px;
-  border-radius: 12px;
-  width: 400px;
-  max-height: 90vh; /* Prevents excessive height */
-  overflow-y: auto; /* Enables scrolling if needed */
-  text-align: center;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  justify-content: center;
+  backdrop-filter: blur(6px);
+  z-index: 1000;
   animation: fadeIn 0.3s ease-in-out;
-  padding-bottom: 20px;
 }
 
+/* Modal Content */
+.modal-content {
+  background: #6a1c8f; /* Deep Dark Blue */
+  padding: 25px;
+  width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: #e2e8f0; /* Light Gray Text */
+  font-family: "Poppins", sans-serif;
+  animation: slideIn 0.4s ease-in-out;
+}
 
-h2 {
-  color: #93c5fd;
-  margin-bottom: 15px;
+/* Title */
+.modal-content h2 {
   font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #e3e5e8; /* Light Blue */
 }
 
 /* Input Fields */
-input, textarea {
+.modal-content input,
+.modal-content textarea {
   width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  background: #1e293b;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid rgba(42, 9, 65, 0.2);
   border-radius: 8px;
+  background: #370b55; /* Darker Blue */
   color: white;
   font-size: 14px;
   outline: none;
-  transition: 0.3s;
+  transition: 0.3s ease-in-out;
 }
 
-input:focus, textarea:focus {
-  border-color: #60a5fa;
+.modal-content input::placeholder,
+.modal-content textarea::placeholder {
+  color: rgba(226, 213, 234, 0.816);
 }
 
-textarea {
-  min-height: 80px;
-  resize: none;
+.modal-content input:focus,
+.modal-content textarea:focus {
+  border-color: #d4c8dd; /* Light Blue Border */
 }
 
 /* AI Assistant Button */
 .ai-btn {
   width: 100%;
-  padding: 10px;
-  background: #3b82f6;
+  padding: 12px;
+  margin-top: 12px;
+  background: linear-gradient(45deg, #a925eb, #3821b9);
   color: white;
   border: none;
   border-radius: 8px;
+  font-size: 15px;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: 500;
-  margin-top: 8px;
   transition: 0.3s;
+  font-weight: 500;
 }
 
 .ai-btn:hover {
-  background: #2563eb;
+  background: linear-gradient(45deg, #3b82f6, #2563eb);
 }
 
-/* File Upload */
+/* File Upload Box */
 .file-upload {
-  margin-top: 12px;
-  background: #334155;
-  padding: 12px;
-  border-radius: 10px;
-}
-
-.file-drop {
-  cursor: pointer;
-  display: block;
-  padding: 10px;
-  text-align: center;
-  color: #e2e8f0;
-  font-size: 14px;
-}
-
-.file-drop:hover {
-  color: #60a5fa;
+  margin-top: 15px;
 }
 
 .file-select {
-  color: #93c5fd;
-  text-decoration: underline;
+  color: #60a5fa;
+  font-weight: bold;
   cursor: pointer;
 }
-
-/* Modal Action Buttons */
+/* Modal Buttons */
 .modal-actions {
-  margin-top: 15px;
   display: flex;
   justify-content: space-between;
+  margin-top: 20px;
 }
 
-.save-btn, .close-btn {
-  width: 48%;
-  padding: 10px;
+.save-btn,
+.close-btn {
+  padding: 12px 18px;
+  border: none;
   border-radius: 8px;
   font-size: 14px;
-  font-weight: 500;
   cursor: pointer;
-  transition: 0.3s;
-  border: none;
+  font-weight: 500;
+  transition: 0.3s ease-in-out;
 }
 
 .save-btn {
-  background: #10b981;
+  background: #37184d;
   color: white;
 }
 
 .save-btn:hover {
-  background: #059669;
+  background: #581781;
 }
 
 .close-btn {
-  background: #ef4444;
+  background: rgba(77, 43, 92, 0.797);
   color: white;
 }
 
 .close-btn:hover {
-  background: #dc2626;
+  background: rgba(255, 255, 255, 0.4);
 }
-
-
-
-.publish-options button {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: 0.3s;
-  border: none;
-}
-
-
-
-/* Schedule Options */
-.schedule-options {
-  margin-top: 10px;
-  text-align: left;
-}
-
-.schedule-options label {
-  display: block;
-  font-size: 14px;
-  color: #e2e8f0;
-  margin-bottom: 5px;
-}
-
-.schedule-options input {
-  width: 100%;
-  padding: 8px;
-  border-radius: 8px;
-  background: #1e293b;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  color: white;
-  font-size: 14px;
-  outline: none;
-  margin-bottom: 8px;
-}
-
-.schedule-options input:focus {
-  border-color: #60a5fa;
-}
-
-/* Confirm Button */
-.confirm-btn {
-  width: 100%;
-  padding: 10px;
-  background: #3b82f6;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: 0.3s;
-  font-weight: 500;
-}
-
-.confirm-btn:hover {
-  background: #2563eb;
-}
-
-/* Success Message Styling */
-.success-message {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  font-weight: bold;
-  margin-top: 20px;
-  text-align: center;
-  animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 
 /* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: scale(0.95);
   }
   to {
     opacity: 1;
-    transform: scale(1);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(0);
   }
 }

@@ -1,112 +1,229 @@
-/* Dark Blue Themed Calendar */
-.calendar-container {
-    width: 100%;
-    margin-top: 20px;
-    background: #0d1b2a;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    color: #fff;
-    text-align: center;
-  }
-  
-  .calendar-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 15px;
-  }
-  
-  .calendar-header h2 {
-    color: #a8dadc;
-    font-size: 24px;
-  }
-  
-  .nav-button {
-    background: #0073e6;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: 0.3s;
-    width: 20px;
-  }
-  
-  .nav-button:hover {
-    background: #005bb5;
-  }
-  
-  .calendar {
-    display: grid;
-    grid-template-rows: auto 1fr;
-    border: 1px solid #1b263b;
-    background: #1b263b;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  
-  .weekdays {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    background: #415a77;
-    padding: 12px;
-    font-weight: bold;
-    text-align: center;
-    color: #f8f9fa;
-    
-  }
-  
-  
-  .calendar-body {
-    display: grid;
-    grid-template-rows: repeat(12, 50px);
-  }
-  
-  .calendar-row {
-    display: grid;
-    grid-template-columns: 60px repeat(7, 1fr);
-    border-top: 1px solid #778da9;
-    align-items: center;
-  }
-  
-  .calendar-time {
-    font-size: 14px;
-    text-align: center;
-    padding: 5px;
-    color: #a8dadc;
-    font-weight: bold;
-  }
-  
-  .calendar-cell {
-    border-left: 1px solid #778da9;
-    min-height: 50px;
-    position: relative;
-    transition: background 0.3s ease;
-  }
-  
-  .calendar-cell:hover {
-    background: rgba(168, 218, 220, 0.1);
-  }
-  
-  .calendar-post {
-    background: #0073e6;
-    color: white;
+/* 🌟 Container Styling */
+.p-6 {
+  padding: 1.5rem;
+}
+
+.bg-white {
+  background-color: rgb(38, 14, 61);
+  color: white;
+}
+
+.shadow-md {
+  box-shadow: 0px 4px 30px rgba(164, 91, 216, 0.625);
+}
+
+.rounded-lg {
+  border-radius: 10px;
+}
+
+/* 📌 Title */
+.text-xl {
+  font-size: 1.5rem;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+/* 🟣 Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: 100px repeat(7, 1fr);
+  border: 1px solid #b271db;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 📅 Header Cells */
+.border {
+  border: 1px solid #845aa1;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.bg-gray-200 {
+  background-color: #9773d0;
+  color: white;
+  font-weight: bold;
+}
+
+/* ⏰ Time Column */
+.bg-gray-100 {
+  background-color: #543d6f;
+  color: white;
+  font-weight: bold;
+}
+
+/* 📌 Schedule Slots */
+.p-4 {
+  padding: 1rem;
+  position: relative;
+  text-align: center;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+/* 🎯 Hover Effect */
+.p-4:hover {
+  background-color: rgba(151, 115, 208, 0.6);
+}
+
+/* ➕ Add Post Tooltip - Only appears on hover */
+.p-4::after {
+  content: "Add Post";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.p-4:hover::after {
+  opacity: 1;
+}
+
+/* ✅ Selected Slot */
+.bg-blue-500 {
+  background-color: #793999;
+}
+
+.text-white {
+  color: white;
+}
+
+/* 🔲 Post Display */
+.text-xs {
+  font-size: 12px;
+}
+
+.text-blue-600 {
+  color: #d9b3ff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* 📅 Month/Year Navigation */
+.custom-button {
+  gap: 100px;
+  width: 80px;
+  background-color: #9773d0;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.custom-button:hover {
+  background-color: #793999;
+}
+
+.react-datepicker__input-container {
+  display: flex;
+  align-items: center;
+  background-color: #543d6f;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.react-datepicker__input {
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 1rem;
+  padding: 0.5rem;
+  align-items: center;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 80px repeat(7, 1fr);
     font-size: 12px;
-    padding: 8px;
-    border-radius: 5px;
-    text-align: center;
-    margin: 5px;
-    font-weight: bold;
-    box-shadow: 0px 2px 5px rgba(0, 115, 230, 0.5);
-    transition: transform 0.2s ease-in-out;
   }
-  
-  .calendar-post:hover {
-    transform: scale(1.05);
-    background: #005bb5;
-    box-shadow: 0px 4px 10px rgba(0, 91, 181, 0.6);
+
+  .p-6 {
+    padding: 1rem;
   }
-  
+
+  .p-4 {
+    padding: 0.8rem;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 0.5rem;
+  }
+}
+
+/* 🌟 Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 100%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.save-btn {
+  background-color: #793999;
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #ddd;
+  color: black;
+}
+
+.save-btn:hover {
+  background-color: #9773d0;
+}
+
+.cancel-btn:hover {
+  background-color: #ccc;
+}

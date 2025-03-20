@@ -63,20 +63,6 @@ const ContentScheduling = () => {
             Publish
           </button>
         </div>
-        <div className="tabs">
-          <button
-            className={`tab ${activeTab === "scheduled" ? "active" : ""}`}
-            onClick={() => setActiveTab("scheduled")}
-          >
-            Scheduled Post
-          </button>
-          <button
-            className={`tab ${activeTab === "recent" ? "active" : ""}`}
-            onClick={() => setActiveTab("recent")}
-          >
-            Recent Post
-          </button>
-        </div>
       </div>
 
       <div className="content-body">

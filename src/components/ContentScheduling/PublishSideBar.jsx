@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaInstagram, FaTwitter, FaYoutube, FaTiktok, FaLinkedin } from 'react-icons/fa';  // Importing icons
+import { FaInstagram, FaTwitter, FaYoutube, FaTiktok, FaLinkedin, FaFacebook } from 'react-icons/fa';  // Importing icons
 import "./PublishSidebar.css";
 
 const PublishSidebar = ({ contentData }) => {
@@ -53,6 +53,10 @@ const PublishSidebar = ({ contentData }) => {
         <div className="platform-list">
           <div className="checkbox-container">
             {[{
+              platform: 'Facebook',
+              icon: <FaFacebook />
+            },
+            {
               platform: 'Instagram',
               icon: <FaInstagram />
             },
@@ -64,10 +68,7 @@ const PublishSidebar = ({ contentData }) => {
               platform: 'Twitter',
               icon: <FaTwitter />
             },
-            {
-              platform: 'YouTube',
-              icon: <FaYoutube />
-            },
+            
             {
               platform: 'LinkedIn',
               icon: <FaLinkedin />

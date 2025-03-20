@@ -1,6 +1,6 @@
 /* Analytics.css */
 .analytics-buffer {
-  background-color: #1e2a47;  /* Dark Blue background */
+  background-color: #300945;  /* Dark Blue background */
   color: white;               /* White text color for contrast */
   padding: 20px;
   margin-top: 20px;
@@ -12,7 +12,7 @@
   font-size: 1.8rem;
   margin-bottom: 15px;
   font-weight: 600;
-  color: #aad4f5;  /* Light blue color for headings */
+  color: #eae3ef;  /* Light blue color for headings */
 }
 
 .analytics-buffer p {
@@ -29,12 +29,12 @@
 
 /* Adding a hover effect for each stat */
 .analytics-buffer p:hover {
-  background-color: #283a6a;  /* Darker blue background when hovered */
+  background-color: #704398;  /* Darker blue background when hovered */
   border-radius: 5px;
   padding: 5px;
   cursor: pointer;
 }
 
 .analytics-buffer p strong {
-  color: #f5a623;  /* A soft amber for strong/important numbers */
+  color: #9d7ab0;  /* A soft amber for strong/important numbers */
 }
