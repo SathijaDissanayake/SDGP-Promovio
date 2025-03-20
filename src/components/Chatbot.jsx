@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.css";
-
+// Import the updated CSS file
 
 const Chatbot = () => {
     const [messages, setMessages] = useState([]);
@@ -20,8 +20,8 @@ const Chatbot = () => {
         }
     };
 
-    const appendMessage = (sender, message, id = null) => {
-        setMessages((prevMessages) => [...prevMessages, { sender, message, id }]);
+    const appendMessage = (sender, message) => {
+        setMessages((prevMessages) => [...prevMessages, { sender, message }]);
     };
 
     const sendMessage = () => {
@@ -41,9 +41,9 @@ const Chatbot = () => {
             method: "POST",
             body: formData,
         })
-            .then((response) => response.text()) 
-            .then((data) => appendMessage("model", data))
-            .catch(() => appendMessage("model error", "Failed to fetch response."))
+            .then((response) => response.text())
+            .then((data) => appendMessage("bot", data))
+            .catch(() => appendMessage("bot", "Failed to fetch response."))
             .finally(() => setSelectedFile(null));
     };
 
@@ -66,8 +66,7 @@ const Chatbot = () => {
 
                     <div className="chat-container" ref={chatContainerRef}>
                         {messages.map((msg, index) => (
-                            <div key={index} className={`message ${msg.sender}`}>
-                                <div className="msg-header">{msg.sender}</div>
+                            <div key={index} className={`message ${msg.sender === "user" ? "message-user" : "message-bot"}`}>
                                 <div className="msg-body">{msg.message}</div>
                             </div>
                         ))}
