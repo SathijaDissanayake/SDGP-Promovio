@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.css";
-// Import the updated CSS file
+
 
 const Chatbot = () => {
     const [messages, setMessages] = useState([]);
