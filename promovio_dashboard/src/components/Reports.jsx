@@ -1,6 +1,59 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 function Reports() {
+  const [metrics, setMetrics] = useState(null);
+  const [campaigns, setCampaigns] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:8000/api/analytics/dashboard");
+        const data = await response.json();
+        setMetrics(data.emailMetrics);
+        setCampaigns(data.campaignPerformance || []);
+      } catch (error) {
+        console.error("Failed to fetch reports data", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const metricItems = metrics
+    ? [
+        {
+          label: "Sent Emails",
+          value: metrics.sent.count.toLocaleString(),
+          trend: `${metrics.sent.percentChange}% from last month`,
+        },
+        {
+          label: "Opens",
+          value: metrics.opens.count.toLocaleString(),
+          trend: `${metrics.opens.percentChange}% from last month`,
+        },
+        {
+          label: "Clicks",
+          value: metrics.clicks.count.toLocaleString(),
+          trend: `${metrics.clicks.percentChange}% from last month`,
+        },
+        {
+          label: "Bounced Emails",
+          value: metrics.bounced.count.toLocaleString(),
+          trend: `${metrics.bounced.percentChange}% from last month`,
+        },
+        {
+          label: "Open Rate",
+          value: `${metrics.openRate.value}%`,
+          trend: `${metrics.openRate.percentChange}% from last month`,
+        },
+        {
+          label: "Click Rate",
+          value: `${metrics.clickRate.value}%`,
+          trend: `${metrics.clickRate.percentChange}% from last month`,
+        },
+      ]
+    : [];
+
   return (
     <div className="bg-gray-900 min-h-screen flex flex-col items-center text-white gap-6 px-8 py-12">
       {/* Header */}
@@ -10,20 +63,17 @@ function Reports() {
 
       {/* Metrics Section */}
       <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 w-full max-w-7xl mb-8 sm:mb-12">
-        {[
-          { label: "Sent Emails", value: "40,902", trend: "+5% from last month" },
-          { label: "Opens", value: "26,258", trend: "+12% from last month" },
-          { label: "Clicks", value: "873", trend: "-3% from last month" },
-          { label: "Bounced Emails", value: "1,802", trend: "+2% from last month" },
-          { label: "Open Rate", value: "64.20%", trend: "+4.5% from last month" },
-          { label: "Click Rate", value: "2.13%", trend: "-1% from last month" }
-        ].map((item, index) => (
-          <div key={index} className="bg-gray-800 p-4 sm:p-6 rounded-lg shadow text-center">
-            <h2 className="text-sm sm:text-lg font-semibold">{item.label}</h2>
-            <p className="text-lg sm:text-2xl mt-1 font-bold text-purple-400">{item.value}</p>
-            <p className="text-xs sm:text-sm text-gray-400">{item.trend}</p>
-          </div>
-        ))}
+        {metricItems.length > 0 ? (
+          metricItems.map((item, index) => (
+            <div key={index} className="bg-gray-800 p-4 sm:p-6 rounded-lg shadow text-center">
+              <h2 className="text-sm sm:text-lg font-semibold">{item.label}</h2>
+              <p className="text-lg sm:text-2xl mt-1 font-bold text-purple-400">{item.value}</p>
+              <p className="text-xs sm:text-sm text-gray-400">{item.trend}</p>
+            </div>
+          ))
+        ) : (
+          <p className="text-gray-400">Loading metrics...</p>
+        )}
       </section>
 
       {/* Campaign Performance Title */}
@@ -43,20 +93,27 @@ function Reports() {
             </tr>
           </thead>
           <tbody>
-            {[
-              ["Campaign 1", 6768, 5011, 227, 21, 83],
-              ["Campaign 2", 3267, 3301, 90, 7, 49],
-              ["Campaign 3", 4852, 3268, 76, 27, 59],
-              ["Campaign 4", 3405, 2426, 67, 27, 40],
-              ["Campaign 5", 1433, 1093, 44, 623, 49],
-              ["Total", 25577, 16846, 604, 728, 323]
-            ].map((row, index) => (
-              <tr key={index} className={`${index % 2 === 0 ? "bg-gray-700" : "bg-gray-600"} border-b border-gray-500`}>
-                {row.map((cell, i) => (
-                  <td key={i} className="p-6 text-center text-lg">{cell}</td>
-                ))}
+            {campaigns.length > 0 ? (
+              campaigns.map((row, index) => (
+                <tr
+                  key={row.campaignId || index}
+                  className={`${index % 2 === 0 ? "bg-gray-700" : "bg-gray-600"} border-b border-gray-500`}
+                >
+                  <td className="p-6 text-center text-lg">{row.name}</td>
+                  <td className="p-6 text-center text-lg">{row.sent}</td>
+                  <td className="p-6 text-center text-lg">{row.opens}</td>
+                  <td className="p-6 text-center text-lg">{row.clicks}</td>
+                  <td className="p-6 text-center text-lg">{row.bounced}</td>
+                  <td className="p-6 text-center text-lg">{row.unsubscribes}</td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="6" className="p-6 text-center text-gray-400">
+                  Loading campaign performance...
+                </td>
               </tr>
-            ))}
+            )}
           </tbody>
         </table>
       </section>
