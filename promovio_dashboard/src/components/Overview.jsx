@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Bar } from "react-chartjs-2"; 
+import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -14,34 +14,49 @@ import {
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 function Overview({ chartRef }) {
+
+  const StatCard = ({ title, value, change }) => (
+    <div className="bg-gray-800 p-1 sm:p-2 rounded shadow">
+      <h2 className="text-sm sm:text-lg font-semibold">{title}</h2>
+      <p className="text-lg sm:text-2xl mt-1">{value}</p>
+      <p className="text-xs sm:text-sm text-gray-400">+{change}% from last month</p>
+    </div>
+  );
+
+
   const [notifications, setNotifications] = useState([]);
+  const [dashboardData, setDashboardData] = useState(null);
 
   // Fetch notifications data when component mounts
   useEffect(() => {
-    const fetchNotifications = async () => {
+    const fetchData = async () => {
       try {
-        const response = await fetch("https://api.example.com/notifications");
-        const data = await response.json();
-        setNotifications(data);
+        // Fetch dashboard overview
+        const overviewRes = await fetch("http://localhost:8000/api/analytics/dashboard");
+        const overviewData = await overviewRes.json();
+        setDashboardData(overviewData);
+
+        // Fetch notifications (already done)
+        const notificationsRes = await fetch("http://localhost:8000/api/notifications");
+        const notificationsData = await notificationsRes.json();
+        setNotifications(notificationsData);
       } catch (error) {
-        console.error("Error fetching notifications:", error);
+        console.error("Error fetching data:", error);
       }
     };
 
-    fetchNotifications();
+    fetchData();
   }, []);
+
 
   // Data for the Bar Chart
   const chartData = {
-    labels: [
-      "Jan", "Feb", "Mar", "Apr", "May", "Jun", 
-      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-    ],
+    labels: dashboardData ? dashboardData.adPerformance.map(item => item.month) : [],
     datasets: [
       {
         label: "AD Performance",
-        data: [5800, 1200, 3000, 3200, 5000, 2000, 1800, 4600, 4700, 5200, 5400, 5800],
-        backgroundColor: "#8B5CF6", 
+        data: dashboardData ? dashboardData.adPerformance.map(item => item.value) : [],
+        backgroundColor: "#8B5CF6",
         borderRadius: 4,
       },
     ],
@@ -73,30 +88,33 @@ function Overview({ chartRef }) {
 
   return (
     <div className="min-h-screen w-full bg-gray-900 text-white p-2 sm:p-4 md:p-6 lg:p-8">
-      
+
       {/* Dashboard Stats */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-4">
-        <div className="bg-gray-800 p-1 sm:p-2 rounded shadow">
-          <h2 className="text-sm sm:text-lg font-semibold">Active Campaigns</h2>
-          <p className="text-lg sm:text-2xl mt-1">45,231.89</p>
-          <p className="text-xs sm:text-sm text-gray-400">+20% from last month</p>
+      {dashboardData && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+          <StatCard
+            title="Active Campaigns"
+            value={dashboardData.overview.activeCampaigns.count}
+            change={dashboardData.overview.activeCampaigns.percentChange}
+          />
+          <StatCard
+            title="ROI"
+            value={dashboardData.overview.roi.value}
+            change={dashboardData.overview.roi.percentChange}
+          />
+          <StatCard
+            title="Performance"
+            value={dashboardData.overview.performance.value}
+            change={dashboardData.overview.performance.percentChange}
+          />
+          <StatCard
+            title="Active Now"
+            value={dashboardData.overview.activeNow.count}
+            change={dashboardData.overview.activeNow.percentChange}
+          />
         </div>
-        <div className="bg-gray-800 p-1 sm:p-2 rounded shadow">
-          <h2 className="text-sm sm:text-lg font-semibold">ROI</h2>
-          <p className="text-lg sm:text-2xl mt-1">+2350</p>
-          <p className="text-xs sm:text-sm text-gray-400">+180.1% from last month</p>
-        </div>
-        <div className="bg-gray-800 p-1 sm:p-2 rounded shadow">
-          <h2 className="text-sm sm:text-lg font-semibold">Performance</h2>
-          <p className="text-lg sm:text-2xl mt-1">+12,234</p>
-          <p className="text-xs sm:text-sm text-gray-400">+19% from last month</p>
-        </div>
-        <div className="bg-gray-800 p-1 sm:p-2 rounded shadow">
-          <h2 className="text-sm sm:text-lg font-semibold">Active Now</h2>
-          <p className="text-lg sm:text-2xl mt-1">+573</p>
-          <p className="text-xs sm:text-sm text-gray-400">+20% since last host</p>
-        </div>
-      </div>
+      )}
+
 
       {/* Graph & Notifications Section */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-1 sm:gap-2">

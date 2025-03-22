@@ -6,7 +6,7 @@ function Notifications() {
   useEffect(() => {
     const fetchNotifications = async () => {
       try {
-        const response = await fetch("https://api.example.com/notifications");
+        const response = await fetch("https://localhost:8000/notifications");
         const data = await response.json();
         setNotifications(data);
       } catch (error) {
