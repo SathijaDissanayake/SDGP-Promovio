@@ -65,7 +65,6 @@ function App() {
           <div className="flex justify-between items-center">
             <h1 className="text-lg sm:text-3xl font-bold text-purple-500">Dashboard</h1>
             <div className="flex items-center gap-2">
-              <div className="bg-gray-700 p-3 rounded-md text-gray-300">📅 <span>01 Nov 2024 - 29 Nov 2024</span></div>
               <button
                 onClick={handleDownload}
                 className="bg-purple-600 text-white px-2 py-1 sm:px-3 sm:py-1.5 rounded hover:bg-purple-700"
