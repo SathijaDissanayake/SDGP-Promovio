@@ -1,95 +1,112 @@
-import React, { useState } from 'react';
-import { FaInstagram, FaTwitter, FaYoutube, FaTiktok, FaLinkedin, FaFacebook } from 'react-icons/fa';  // Importing icons
-import "./PublishSidebar.css";
+import React, { useState, useEffect } from 'react';
+import { FaInstagram, FaLinkedin, FaFacebook } from 'react-icons/fa';
+import './PublishSidebar.css';
 
-const PublishSidebar = ({ contentData }) => {
-  const [selectedPosts, setSelectedPosts] = useState([]);
+const PublishSidebar = () => {
+  const [savedPosts, setSavedPosts] = useState([]);
+  const [selectedPostId, setSelectedPostId] = useState('');
   const [selectedPlatforms, setSelectedPlatforms] = useState([]);
 
-  const togglePostSelection = (postId) => {
-    setSelectedPosts((prevSelectedPosts) =>
-      prevSelectedPosts.includes(postId)
-        ? prevSelectedPosts.filter(id => id !== postId)
-        : [...prevSelectedPosts, postId]
-    );
-  };
+  useEffect(() => {
+    const localPosts = JSON.parse(localStorage.getItem('localPosts') || '[]');
+    setSavedPosts(localPosts);
+  }, []);
+
+  const selectedPost = savedPosts.find(p => p.id.toString() === selectedPostId);
 
   const togglePlatformSelection = (platform) => {
-    setSelectedPlatforms((prevSelectedPlatforms) =>
-      prevSelectedPlatforms.includes(platform)
-        ? prevSelectedPlatforms.filter(p => p !== platform)
-        : [...prevSelectedPlatforms, platform]
+    setSelectedPlatforms(prev =>
+      prev.includes(platform)
+        ? prev.filter(p => p !== platform)
+        : [...prev, platform]
     );
   };
 
   const handlePublish = () => {
-    alert(`Publishing to ${selectedPlatforms.join(', ')} with selected posts: ${selectedPosts.join(', ')}`);
+    if (!selectedPostId || selectedPlatforms.length === 0) {
+      alert('Please select a post and at least one platform.');
+      return;
+    }
+
+    const post = selectedPost;
+    const encodedMessage = encodeURIComponent(post.message || post.title);
+
+    // ✅ Facebook Share
+    if (selectedPlatforms.includes('Facebook')) {
+      const fbShareUrl = `https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com&quote=${encodedMessage}`;
+      window.open(fbShareUrl, '_blank');
+    }
+
+    // ✅ LinkedIn Share
+    if (selectedPlatforms.includes('LinkedIn')) {
+      const linkedInShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=https://yourwebsite.com&summary=${encodedMessage}`;
+      window.open(linkedInShareUrl, '_blank');
+    }
+
+    // ✅ Instagram App Launch + Clipboard Support (Mobile Only)
+    if (selectedPlatforms.includes('Instagram')) {
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+      if (isMobile) {
+        // Copy post message to clipboard
+        navigator.clipboard.writeText(post.message || post.title).then(() => {
+          alert('📋 Post caption copied! Opening Instagram...');
+          window.location.href = 'instagram://app'; // open app
+        }).catch(() => {
+          alert('Could not copy to clipboard, but opening Instagram anyway.');
+          window.location.href = 'instagram://app';
+        });
+      } else {
+        alert('Instagram sharing is only supported on mobile devices.');
+      }
+    }
   };
 
   return (
     <div className="publish-sidebar">
       <h2 className="sidebar-header">Connect and Publish Your Content</h2>
 
-      {/* Post Selection */}
+      {/* Select a Post */}
       <div className="selection-section">
-        <button>Select Posts</button>
-        <div className="post-list">
-          {contentData.map((post) => (
-            <div key={post.id} className="post-option">
+        <h3>Select a Post</h3>
+        <select
+          value={selectedPostId}
+          onChange={e => setSelectedPostId(e.target.value)}
+          className="post-select"
+        >
+          <option value="">-- Select a post --</option>
+          {savedPosts.map(post => (
+            <option key={post.id} value={post.id}>
+              {post.title}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {/* Select Platforms */}
+      <div className="selection-section">
+        <h3>Select Platforms</h3>
+        <div className="platform-list">
+          {[
+            { platform: 'Facebook', icon: <FaFacebook /> },
+            { platform: 'Instagram', icon: <FaInstagram /> },
+            { platform: 'LinkedIn', icon: <FaLinkedin /> }
+          ].map(({ platform, icon }) => (
+            <div key={platform} className="platform-option">
               <input
                 type="checkbox"
-                checked={selectedPosts.includes(post.id)}
-                onChange={() => togglePostSelection(post.id)}
+                checked={selectedPlatforms.includes(platform)}
+                onChange={() => togglePlatformSelection(platform)}
               />
-              <label>{post.title}</label>
+              <label className="platform-label">
+                {icon} {platform}
+              </label>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Platform Selection */}
-      <div className="selection-section">
-        <h3>Select Platforms</h3>
-        <div className="platform-list">
-          <div className="checkbox-container">
-            {[{
-              platform: 'Facebook',
-              icon: <FaFacebook />
-            },
-            {
-              platform: 'Instagram',
-              icon: <FaInstagram />
-            },
-            {
-              platform: 'TikTok',
-              icon: <FaTiktok />
-            },
-            {
-              platform: 'Twitter',
-              icon: <FaTwitter />
-            },
-            
-            {
-              platform: 'LinkedIn',
-              icon: <FaLinkedin />
-            }]
-            .map(({ platform, icon }) => (
-              <div key={platform} className="platform-option">
-                <input
-                  type="checkbox"
-                  checked={selectedPlatforms.includes(platform)}
-                  onChange={() => togglePlatformSelection(platform)}
-                />
-                <label className="platform-label">
-                  {icon} {platform}
-                </label>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Publish and Cancel Buttons */}
+      {/* Action Buttons */}
       <div className="action-buttons">
         <button className="publish-btn" onClick={handlePublish}>Publish Now</button>
         <button className="cancel-btn" onClick={() => alert('Publishing canceled')}>Cancel</button>

@@ -2,20 +2,22 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import "./ContentScheduling.css";
 import ContentGrid from "./ContentGrid";
-import ContentCalendar from "./ContentCalendar"; // Updated Import
+import ContentCalendar from "./ContentCalendar";
 import { PlusIcon, CalendarIcon } from "./Icons";
 import CreateIdeaModal from "./CreateIdeaModal";
-import Analytics from './Analytics';  // Import the Analytics component
-import PublishSidebar from"./PublishSideBar"; // Import the new Publish Sidebar component
+import Analytics from './Analytics';
+import PublishSidebar from "./PublishSideBar";
+import IdeasFeed from "./IdeasFeed";  // ✅ Import IdeasFeed
 
 const ContentScheduling = () => {
   const [activeTab, setActiveTab] = useState("scheduled");
   const [contentData, setContentData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showCreateModal, setShowCreateModal] = useState(false);
-  const [showCalendar, setShowCalendar] = useState(false); // Show calendar state
-  const [showAnalytics, setShowAnalytics] = useState(false); // State to toggle analytics view
-  const [showPublishSidebar, setShowPublishSidebar] = useState(false); // State to toggle Publish Sidebar
+  const [showCalendar, setShowCalendar] = useState(false);
+  const [showAnalytics, setShowAnalytics] = useState(false);
+  const [showPublishSidebar, setShowPublishSidebar] = useState(false);
+  const [showIdeasFeed, setShowIdeasFeed] = useState(false); // ✅ State for Ideas Feed
 
   useEffect(() => {
     axios
@@ -34,7 +36,6 @@ const ContentScheduling = () => {
     <div className="content-scheduling">
       <div className="content-header">
         <h1>Content Scheduling</h1>
-        
       </div>
 
       <div className="content-actions">
@@ -53,14 +54,17 @@ const ContentScheduling = () => {
             View Calendar
           </button>
 
-          {/* Analyze button to toggle analytics */}
           <button className="create-btn" onClick={() => setShowAnalytics(!showAnalytics)}>
             Analyze
           </button>
 
-          {/* Publish button to toggle the Publish Sidebar */}
           <button className="create-btn" onClick={() => setShowPublishSidebar(!showPublishSidebar)}>
             Publish
+          </button>
+
+          {/* ✅ Button to toggle IdeasFeed */}
+          <button className="create-btn" onClick={() => setShowIdeasFeed(!showIdeasFeed)}>
+            Ideas Feed
           </button>
         </div>
       </div>
@@ -68,23 +72,23 @@ const ContentScheduling = () => {
       <div className="content-body">
         {showCalendar ? (
           <ContentCalendar scheduledPosts={contentData} />
+        ) : showIdeasFeed ? (
+          <IdeasFeed />
         ) : (
           <div className="content-main">
             {loading ? <p>Loading...</p> : <ContentGrid data={contentData} />}
           </div>
         )}
 
-        {/* Analytics Sidebar - Show it when "Analyze" button is clicked */}
         {showAnalytics && (
           <div className="content-sidebar">
-            <Analytics contentData={contentData} /> {/* Pass content data to the Analytics component */}
+            <Analytics contentData={contentData} />
           </div>
         )}
 
-        {/* Publish Sidebar - Show it when "Publish" button is clicked */}
         {showPublishSidebar && (
           <div className="content-sidebar">
-            <PublishSidebar contentData={contentData} /> {/* Pass content data to the PublishSidebar component */}
+            <PublishSidebar contentData={contentData} />
           </div>
         )}
       </div>

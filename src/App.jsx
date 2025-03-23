@@ -9,6 +9,7 @@ import AboutUs from './components/LandingPage/AboutUs';
 import ContentSchedulingPage from "./components/ContentScheduling/ContentSchedulingPage"; // Ensure this is correct
 import CreateIdeaModal from "./components/ContentScheduling/CreateIdeaModal";
 import './App.css';
+import IdeasFeed from './components/ContentScheduling/IdeasFeed';
 
 
 
@@ -28,7 +29,7 @@ function App() {
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/content-scheduling" element={<ContentSchedulingPage />} /> 
         <Route path="/CreateIdeaModal" element={<CreateIdeaModal />} /> 
-       
+        <Route path='/IdeasFeed' element={<IdeasFeed />}  />
       </Routes>
     </>
   );

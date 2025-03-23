@@ -1,0 +1,140 @@
+/* Ideas Feed Styles */
+.ideas-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .ideas-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #e3e5e8;
+    font-size: 28px;
+  }
+  
+  .ideas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+  }
+  
+  .idea-card {
+    background: #370b55;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .idea-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .idea-image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+  }
+  
+  .idea-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .idea-card:hover .idea-image img {
+    transform: scale(1.05);
+  }
+  
+  .idea-content {
+    padding: 20px;
+  }
+  
+  .idea-content h3 {
+    margin: 0 0 10px 0;
+    color: #e3e5e8;
+    font-size: 18px;
+  }
+  
+  .idea-content p {
+    color: #d4c8dd;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-clamp: 3;
+  }
+  
+  .idea-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .idea-date {
+    font-size: 12px;
+    color: #a29daa;
+  }
+  
+  .loading-spinner {
+    text-align: center;
+    padding: 40px;
+    color: #e3e5e8;
+    font-size: 18px;
+  }
+  
+  .error-message {
+    text-align: center;
+    padding: 40px;
+    color: #e05d5d;
+    font-size: 18px;
+    background: rgba(224, 93, 93, 0.1);
+    border-radius: 8px;
+    margin: 20px;
+  }
+  
+  .no-ideas {
+    text-align: center;
+    padding: 30px;
+    color: #a29daa;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+  }
+  
+  .delete-button {
+    background-color: #49104f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: auto;
+    font-size: 0.9rem;
+  }
+  
+  .delete-button:hover {
+    background-color: #8a1d9d;
+  }
+  
+  .idea-footer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .ideas-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
