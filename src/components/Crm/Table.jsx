@@ -75,7 +75,7 @@ export default function Table({ activeTab }) {
         if (!confirmDelete) return;
 
         try {
-            await axios.delete(`http://localhost:8000/api/customers/${id}`);
+            await axios.delete(`http://localhost:8000/api/v1/customers/${id}`);
             setData(prevData => prevData.filter(customer => customer._id !== id));
         } catch (error) {
             console.error("Error deleting customer:", error);
@@ -87,12 +87,12 @@ export default function Table({ activeTab }) {
         try {
             let response;
             if (updatedCustomer._id) {
-                response = await axios.put(`http://localhost:8000/api/customers/${updatedCustomer._id}`, updatedCustomer);
+                response = await axios.put(`http://localhost:8000/api/v1/customers/${updatedCustomer._id}`, updatedCustomer);
                 setData(prevData =>
                     prevData.map(c => c._id === updatedCustomer._id ? response.data : c)
                 );
             } else {
-                response = await axios.post("http://localhost:8000/api/customers", updatedCustomer);
+                response = await axios.post("http://localhost:8000/api/v1/customers", updatedCustomer);
                 setData(prevData => [...prevData, response.data]);
             }
             setShowForm(false);
